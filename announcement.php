@@ -39,8 +39,19 @@ class Announcement{
         mysqli_close($conn);
 
         return new Announcement($row[0],$row[1],$row[2],$row[3],$row[4],$row[5],$row[6],$row[7],$row[8],$row[9]);
-
     }
 
+    public static function getRandom(){
+        $conn = databaseConnect::connect();
+
+        $limit = mysqli_query($conn, "SELECT COUNT(*) FROM announcement");
+        $limit = mysqli_fetch_row($limit)[0];
+
+        $randomId = rand(1, $limit);
+
+        return Announcement::getById($randomId);
+    }
+
+// INSERT INTO `announcement`(`id`, `category`, `title`, `description`, `value`, `img_link`, `contact`, `location`, `date`, `user_owner`) VALUES (null,"elektronika","asda","dgfdsgd",13,"/brak.png","asdsadad","dsfdsfdsf","2021-10-10",1)
 }
 ?>
