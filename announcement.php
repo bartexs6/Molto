@@ -12,6 +12,7 @@ class Announcement{
     public $date;
     public $user_owner;
 
+    // NIE UZYWAC KONSTRUKTORA (Od tego jest addAnnouncement)
     function __construct($id, $category, $title, $description, $value, $img_link, $contact, $location, $date, $user_owner) {
         $this->id = $id;
         $this->title = $title;
@@ -26,10 +27,10 @@ class Announcement{
       }
 
 
-    // Dodawwanie ogloszen do bazy
+    // Dodawanie ogloszen do bazy
     public static function addAnnouncement($category, $title, $description, $value, $img_link, $contact, $location, $date, $user_owner){
 
-        $conn = databaseConnect::connect();
+        $conn = DatabaseConnect::connect();
         $cmd = mysqli_prepare($conn, "INSERT INTO `announcement`(`category`, `title`, `description`, `value`, `img_link`, `contact`, `location`, `date`, `user_owner`) VALUES (?,?,?,?,?,?,?,?,?)");
 
         mysqli_stmt_bind_param($cmd, "sssissssi", $category, $title, $description, $value, $img_link, $contact, $location, $date, $user_owner);
@@ -44,7 +45,7 @@ class Announcement{
 
     // Pobieranie ogloszenia poprzez id
     public static function getById(int $id){
-        $conn = databaseConnect::connect();
+        $conn = DatabaseConnect::connect();
         $cmd = mysqli_prepare($conn, "SELECT * FROM announcement WHERE id=?");
 
         mysqli_stmt_bind_param($cmd, "i", $id);
@@ -61,7 +62,7 @@ class Announcement{
 
     // Pobieranie losowego ogloszenia (Przykladowe uzycie: Strona glowna)
     public static function getRandom(){
-        $conn = databaseConnect::connect();
+        $conn = DatabaseConnect::connect();
 
         $limit = mysqli_query($conn, "SELECT COUNT(*) FROM announcement");
         $limit = mysqli_fetch_row($limit)[0];

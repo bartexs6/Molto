@@ -15,9 +15,17 @@
 <div id="a">
 <?php
 include("connect.php");
+include("user.php");
 include("announcement.php");
 
 echo '<link href="styl.css" rel="stylesheet">';
+
+User::login("ada", "test");
+if(isset($_SESSION['logged']) && $_SESSION['logged'] == TRUE){
+    echo "Witaj " . $_SESSION['username'];
+
+}
+
 
 //$conn = databaseConnect::connect();
 

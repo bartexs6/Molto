@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 28 Paź 2021, 13:47
--- Wersja serwera: 10.4.21-MariaDB
--- Wersja PHP: 8.0.10
+-- Czas generowania: 28 Paź 2021, 19:23
+-- Wersja serwera: 10.4.20-MariaDB
+-- Wersja PHP: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -75,7 +75,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `email`) VALUES
-(1, 'tomek1332', 'asd', 'a@a.pl');
+(1, 'tomek1332', 'asd', 'a@a.pl'),
+(2, 'ada', '098f6bcd4621d373cade4e832627b4f6', 'bp@bp.pl');
 
 -- --------------------------------------------------------
 
@@ -131,7 +132,7 @@ ALTER TABLE `announcement`
 -- AUTO_INCREMENT dla tabeli `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT dla tabeli `userdata`
