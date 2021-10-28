@@ -6,6 +6,7 @@ class DatabaseConnect{
     const PASSWORD = ""; 
     const DATABASE = "molto"; 
 
+    // Polaczenie z baza danych (Nie zapominac na koncu o zamknieciu polaczenia)
     public static function connect(){
         try
         {
