@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 28 Paź 2021, 10:56
--- Wersja serwera: 10.4.17-MariaDB
--- Wersja PHP: 8.0.2
+-- Czas generowania: 28 Paź 2021, 13:47
+-- Wersja serwera: 10.4.21-MariaDB
+-- Wersja PHP: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,17 +45,17 @@ CREATE TABLE `announcement` (
 --
 
 INSERT INTO `announcement` (`id`, `category`, `title`, `description`, `value`, `img_link`, `contact`, `location`, `date`, `user_owner`) VALUES
-(1, 'elektronika', 'test', 'asdsadsadsadsadsa', 10, '/brak.png', 'asdasd', 'sadsadas', '2020-09-01 00:00:00', 1),
-(2, 'elektronika', 'asda', 'dgfdsgd', 13, '/brak.png', 'asdsadad', 'dsfdsfdsf', '2021-10-10 00:00:00', 1),
-(3, 'elektronika', 'aaa', 'asdsadas', 12, '/brak.png', 'sadsadsa', 'sadsad', '2021-09-09 00:00:00', 1),
-(4, 'elektronika', 'asda', 'dgfdsgd', 13, '/brak.png', 'asdsadad', 'dsfdsfdsf', '2021-10-10 00:00:00', 1),
-(5, 'motoryzacja', 'asdsad', 'csotam', 122, '/brak.png', 'asfdfds', 'vbvbvb', '2021-10-28 10:48:59', 1),
-(6, 'motoryzacja', 'asdsad', 'csotam', 122, '/brak.png', 'asfdfds', 'vbvbvb', '2021-10-28 10:49:30', 1),
-(7, 'motoryzacja', 'asdsad', 'csotam', 122, '/brak.png', 'asfdfds', 'vbvbvb', '2021-10-28 10:51:03', 1),
-(8, 'motoryzacja', 'asdsad', 'csotam', 122, '/brak.png', 'asfdfds', 'vbvbvb', '2021-10-28 10:51:03', 1),
-(9, 'motoryzacja', 'asdsad', 'csotam', 122, '/brak.png', 'asfdfds', 'vbvbvb', '2021-10-28 10:51:03', 1),
-(10, 'motoryzacja', 'asdsad', 'csotam', 122, '/brak.png', 'asfdfds', 'vbvbvb', '2021-10-28 10:51:03', 1),
-(11, 'motoryzacja', 'asdsad', 'csotam', 122, '/brak.png', 'asfdfds', 'vbvbvb', '2021-10-28 10:51:03', 1);
+(1, 'motoryzacja', 'Opel Corsa C NOWOSC', 'asdsadsadsadsadsa', 12, 'brak.jpg', 'asdasd', 'sadsadas', '2021-10-28 14:33:22', 1),
+(2, 'motoryzacja', 'Opel Corsa C rocznik 2003', 'asdsadsadsadsadsa', 4510, 'opel1.jpg', 'asdasd', 'sadsadas', '2021-10-28 14:33:22', 1),
+(3, 'motoryzacja', 'Opel Corsa C bezwypadkowy niemiec plakal', 'asdsadsadsadsadsa', 1999, 'opel2.jpg', 'asdasd', 'sadsadas', '2021-10-28 14:33:22', 1),
+(4, 'motoryzacja', 'Opel Corsa C 2003 dziala', 'asdsadsadsadsadsa', 87, 'opel3.jpg', 'asdasd', 'sadsadas', '2021-10-28 14:33:22', 1),
+(5, 'motoryzacja', 'Opel Corsa C na czesci', 'asdsadsadsadsadsa', 12, 'opel4.jpg', 'asdasd', 'sadsadas', '2021-10-23 14:32:12', 1),
+(6, 'motoryzacja', 'Opel Corsa C sprzedam', 'asdsadsadsadsadsa', 65, 'opel5.jpg', 'asdasd', 'sadsadas', '2021-10-11 12:54:23', 1),
+(7, 'motoryzacja', 'asdsad', 'csotam', 122, 'brak.jpg', 'asfdfds', 'vbvbvb', '2021-10-28 10:51:03', 1),
+(8, 'motoryzacja', 'asdsad', 'csotam', 122, 'brak.jpg', 'asfdfds', 'vbvbvb', '2021-10-28 10:51:03', 1),
+(9, 'motoryzacja', 'asdsad', 'csotam', 122, 'brak.jpg', 'asfdfds', 'vbvbvb', '2021-10-28 10:51:03', 1),
+(10, 'motoryzacja', 'asdsad', 'csotam', 122, 'brak.jpg', 'asfdfds', 'vbvbvb', '2021-10-28 10:51:03', 1),
+(11, 'motoryzacja', 'asdsad', 'csotam', 122, 'brak.jpg', 'asfdfds', 'vbvbvb', '2021-10-28 10:51:03', 1);
 
 -- --------------------------------------------------------
 
