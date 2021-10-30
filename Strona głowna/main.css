@@ -81,7 +81,7 @@ nav{
     width: 30%;
 }
 
-.search .input input[type=text]{
+.search .input input{
     padding: 5px;
     font-size: 20px;
     border: none;
