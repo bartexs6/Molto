@@ -29,19 +29,19 @@
     <main>
         
         <!--SEKCJA WYSZUKIWANIA PRZEDMIOTU--> 
-        <section class="searching_section">
-            
-            <div class="search_field">
-                <form action="search_handling.php">
-                    <input type="text" name="search_value" placeholder="podaj nazwe przedmiotu">         
-            </div>
+        <div class="search">
+            <form action="search.php"></form>
 
-            <div class="button_field">
-                <input type="button" name="szukaj" value="Szukaj!">
-                </form>
-            </div>
-
-        </section>
+                <div class="input">
+                    <input type="text" placeholder="Szukaj" id="input_search">
+                </div>
+                
+                <div class="logo_search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </div>
+                
+            </form>
+        </div>
 
         <!--SEKCJA KATEGORII-->
         <section class="categories">
