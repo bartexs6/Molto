@@ -19,7 +19,7 @@
         <div class="navigation">
             <ul>
                 <li><a href="#main">Główna</a></li>
-                <li><a href="addAnn">Dodaj ogłoszenie</a></li>
+                <li><a href="addAnn.html">Dodaj ogłoszenie</a></li>
                 <li><a href="#account">Konto</a></li> 
             </ul>
         </div>
@@ -48,22 +48,6 @@
 
             
         </section>
-
-        <form action="add_ann.php" method="POST" enctype="multipart/form-data">
-            
-            <!-- LISTA KATEGORII-->
-            <option value=""></option>
-
-
-            <input type="text" name="category" placeholder="kategoria"><br>
-            <input type="text" name="title" placeholder="tytuł"><br>
-            <textarea name="opis" placeholder="opis" rows="5" cols="40"></textarea><br>
-            <input type="number" name="value" placeholder="cena"><br>
-            <input type="file" name="img_link"><br>
-            <input type="number" minlength="9" maxlength="9" name="contact" placeholder="numer tel."><br>
-            <input type="text" name="location" placeholder="dane kontakt."><br>
-            <input type="submit" name="submit" value="Dodaj!">
-        </form>
 
     </main>
 
