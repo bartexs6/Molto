@@ -1,4 +1,6 @@
 <?php
+session_start();
+include "connect.php";
 include "announcement.php";
 
 if (isset($_POST['submit']))
@@ -18,7 +20,9 @@ if (isset($_POST['submit']))
     $contact = $_POST['phone'];
     $location = $_POST['location'];
     $date = date("Y-m-d H:i:s");
-    $user_owner = 1;
+
+
+    $user_owner = $_SESSION['id'];
 
     Announcement::addAnnouncement($category, $title, $description, $value, $img_link, $contact, $location, $date, $user_owner);
 

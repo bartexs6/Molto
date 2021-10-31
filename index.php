@@ -19,7 +19,7 @@
         <div class="navigation">
             <ul>
                 <li><a href="#main">Główna</a></li>
-                <li><a href="addAnn.html">Dodaj ogłoszenie</a></li>
+                <li><a href="addAnnForm.php">Dodaj ogłoszenie</a></li>
                 <li><a href="#account">Konto</a></li> 
             </ul>
         </div>

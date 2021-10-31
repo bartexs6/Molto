@@ -81,9 +81,30 @@ class User{
             session_regenerate_id();
             $_SESSION['logged'] = TRUE;
             $_SESSION['username'] = $username;
+            $_SESSION['id'] = User::takeUserId($username);
             return true;
         }else{
             return false;
+        }
+    }
+
+    // Pobiera id uzytkownika
+    private static function takeUserId($username){
+        $conn = DatabaseConnect::connect();
+        $cmd = mysqli_prepare($conn, "SELECT id FROM user WHERE username=?");
+
+        mysqli_stmt_bind_param($cmd, "s", $username);
+        mysqli_stmt_execute($cmd);
+
+        $getResult = mysqli_stmt_get_result($cmd);
+ 
+        $row = mysqli_fetch_row($getResult);
+        mysqli_close($conn);
+
+        if(isset($row[0])){
+            return $row[0];
+        }else{
+            return 1;
         }
     }
 
