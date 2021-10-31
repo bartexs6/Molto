@@ -1,19 +1,52 @@
-<!--<div id="a">
-<div class="randomAnn">
-    <img src="ann_img/brak.jpg">
-    <h3>Opel Corsa C - 2003 rocznik</h3>
-    <p>2021-10-28</p>
-    <p>12 zł</p>
-</div>
-<div class="randomAnn">
-    <img src="ann_img/brak.jpg">
-    <h3>Title</h3>
-    <p>2021-09-09</p>
-    <p>12 zł</p>
-</div>
-</div>-->
-<div id="a">
-<?php
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molto</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+</head>
+
+<body>
+    
+    <nav>
+        <div class="logo">
+            <img src="" alt="logo">
+        </div>
+        
+        <div class="navigation">
+            <ul>
+                <li><a href="#main">Główna</a></li>
+                <li><a href="addAnn.html">Dodaj ogłoszenie</a></li>
+                <li><a href="#account">Konto</a></li> 
+            </ul>
+        </div>
+
+    </nav>
+
+    <main>
+        
+        <!--SEKCJA WYSZUKIWANIA PRZEDMIOTU--> 
+        <div class="search">
+            <form action="search.php"></form>
+
+                <div class="input">
+                    <input type="text" placeholder="Szukaj" id="input_search">
+                </div>
+                
+                <div class="logo_search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </div>
+                
+            </form>
+        </div>
+
+        <!--SEKCJA KATEGORII-->
+        <section class="categories">
+
+        <?php
 include("connect.php");
 include("user.php");
 include("announcement.php");
@@ -34,13 +67,14 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == TRUE){
 
 //Announcement::addAnnouncement("motoryzacja","asdsad","csotam",122,"/brak.png", "asfdfds", "vbvbvb", date("Y-m-d H:i:s"), 1);
 
-for ($i=1; $i < 6; $i++) { 
-    $a = Announcement::getRandom();
+
+    $a = Announcement::getRandom(6);
+for ($i=0; $i < 6; $i++) { 
     echo '<div class="randomAnn">';
-    echo '<img src="ann_img/'.$a->img_link.'">';
-    echo '<h3>'.$a->title.'</h3>';
-    echo '<p>'.$a->date.'</p>';
-    echo '<p>'.$a->value.' zł</p>';
+    echo '<img src="ann_img/'.$a[$i]->img_link.'">';
+    echo '<h3>'.$a[$i]->title.'</h3>';
+    echo '<p>'.$a[$i]->date.'</p>';
+    echo '<p>'.$a[$i]->value.' zł</p>';
     echo '</div>';
 }
 
@@ -63,5 +97,25 @@ echo "<br><br>";
 $a = Announcement::getById(6);
 echo $a->category . "|||" . $a->title . "|||" . $a->description . "|||" .$a->date;
 */
+
+
 ?>
-</div>
+            
+        </section>
+
+    </main>
+
+
+    <footer>
+        <div class="socials">      
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>  
+        </div>
+    </footer>
+
+
+
+</body>
+</html>

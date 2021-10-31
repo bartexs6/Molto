@@ -1,6 +1,4 @@
 <?php
-include "connect.php";
-
 class Announcement{
 
     const MAX_TITLE_LENGTH = 21;
@@ -91,17 +89,34 @@ class Announcement{
     }
 
     // Pobieranie losowego ogloszenia (Przykladowe uzycie: Strona glowna)
-    public static function getRandom(){
+    public static function getRandom(int $amount = 1){
         $conn = DatabaseConnect::connect();
 
         $limit = mysqli_query($conn, "SELECT COUNT(*) FROM announcement");
         $limit = mysqli_fetch_row($limit)[0];
 
-        $randomId = rand(1, $limit);
-
         mysqli_close($conn);
 
-        return Announcement::getById($randomId);
+        $list = array();
+        $usedId = array();
+
+        for ($i=0; $i < $amount; $i++) { 
+            $randomId = rand(1, $limit);
+
+            if(in_array($randomId, $usedId)){
+                $i--;
+                continue;
+            }
+
+            array_push($usedId, $randomId);
+            array_push($list, Announcement::getById($randomId));
+        }
+        
+        if(count($list) == 1){
+            return $list[0];
+        }else{
+            return $list;
+        }
     }
     // INSERT INTO `announcement`(`id`, `category`, `title`, `description`, `value`, `img_link`, `contact`, `location`, `date`, `user_owner`) VALUES (null,"elektronika","asda","dgfdsgd",13,"/brak.png","asdsadad","dsfdsfdsf","2021-10-10",1)
 }
