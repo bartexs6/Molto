@@ -14,7 +14,7 @@ if (isset($_POST['submit']))
     $img_link = substr($_FILES['img_link']['name'], 10);
 
     $destdir = 'ann_img/';
-    $img=file_get_contents($_FILES['img_link']['name']);
+    $img=file_get_contents($_FILES['img_link']['tmp_name']);
     file_put_contents($destdir.substr($img_link, strrpos($img_link,'/')), $img);
 
     $contact = $_POST['phone'];

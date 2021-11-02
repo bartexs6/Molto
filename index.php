@@ -50,6 +50,7 @@
 include_once("connect.php");
 include_once("user.php");
 include_once("announcement.php");
+include_once("error.php");
 
 echo '<link href="styl.css" rel="stylesheet">';
 

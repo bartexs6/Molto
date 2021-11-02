@@ -36,10 +36,12 @@ class Announcement{
     // Dodawanie ogloszen do bazy
     public static function addAnnouncement($category, $title, $description, $value, $img_link, $contact, $location, $date, $user_owner){
         if(empty($category) || empty($title) || empty($description) || empty($value) || empty($img_link) || empty($contact) || empty($location) || empty($date) || empty($user_owner)){
+            show_error("Problem z dodaniem ogłoszenia");
             throw new Exception("Empty variable(s)", 1);
         }
 
         if(!Announcement::validateDate($date)){
+            show_error("Problem z datą ogłoszenia");
             throw new Exception("Date error", 1);
         }
 
@@ -56,6 +58,7 @@ class Announcement{
     
             //return new Announcement($row[0],$row[1],$row[2],$row[3],$row[4],$row[5],$row[6],$row[7],$row[8],$row[9]);
         }else{
+            show_error("Problem z dodaniem ogłoszenia");
             throw new Exception("Too long variable(s)", 1);
         }
     }

@@ -1,4 +1,5 @@
 <?php
+    include_once("error.php");
 
         // Zmiana ostrzezen na bledy
         function exception_error_handler($severity, $message, $file, $line) {
@@ -10,7 +11,6 @@
         set_error_handler("exception_error_handler");
 
 class DatabaseConnect{
-
     const SERVERNAME = "localhost";
     const USERNAME = "root";
     const PASSWORD = ""; 
@@ -28,7 +28,7 @@ class DatabaseConnect{
         }
         catch(Exception $e)
         {
-            echo "Nie można połączyć się z bazą danych";
+            show_error("Nie można połączyć się z bazą danych");
             exit();
             //echo $e->getMessage();
         }
