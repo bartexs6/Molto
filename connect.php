@@ -1,4 +1,14 @@
 <?php
+
+        // Zmiana ostrzezen na bledy
+        function exception_error_handler($severity, $message, $file, $line) {
+            if (!(error_reporting() & $severity)) {
+                return;
+            }
+            throw new ErrorException($message, 0, $severity, $file, $line);
+        }
+        set_error_handler("exception_error_handler");
+
 class DatabaseConnect{
 
     const SERVERNAME = "localhost";
@@ -10,18 +20,17 @@ class DatabaseConnect{
     public static function connect(){
         try
         {
-            if ($db = mysqli_connect(DatabaseConnect::SERVERNAME, DatabaseConnect::USERNAME, DatabaseConnect::PASSWORD, DatabaseConnect::DATABASE))
-            {
-                return $db;
+            $db = mysqli_connect(DatabaseConnect::SERVERNAME, DatabaseConnect::USERNAME, DatabaseConnect::PASSWORD, DatabaseConnect::DATABASE);
+            if(mysqli_connect_errno()){
+                throw new exception("Database connect error");
             }
-            else
-            {
-                throw new Exception('Unable to connect');
-            }
+            return $db;
         }
         catch(Exception $e)
         {
-            echo $e->getMessage();
+            echo "Nie można połączyć się z bazą danych";
+            exit();
+            //echo $e->getMessage();
         }
     }
 }

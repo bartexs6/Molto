@@ -20,7 +20,7 @@
             <ul>
                 <li><a href="#main">Główna</a></li>
                 <li><a href="addAnnForm.php">Dodaj ogłoszenie</a></li>
-                <li><a href="#account">Konto</a></li> 
+                <li><a href="login.php">Konto</a></li> 
             </ul>
         </div>
 
@@ -47,9 +47,9 @@
         <section class="categories">
 
         <?php
-include("connect.php");
-include("user.php");
-include("announcement.php");
+include_once("connect.php");
+include_once("user.php");
+include_once("announcement.php");
 
 echo '<link href="styl.css" rel="stylesheet">';
 
