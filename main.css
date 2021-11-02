@@ -1,17 +1,19 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100");
 body{
     background-color: lavenderblush;
+    margin: 0;
 }
 
 /*SEKCJA NAVIGACJI*/
+
 nav{
     display: flex;
     justify-content: flex-end;
     justify-content: space-between;
-    background-color: #1c6cad;
-    border-radius: 10px;
+    background-color: #4137cc;
     padding: 8px;
-    margin: 0;
+    height: 8vh;
+    border-radius: 0% 0% 20% 30%;
 }
 
 .categories{
@@ -41,19 +43,32 @@ nav{
 }
 
 .navigation ul li a{
-    transition: all .5s ease;
-    color: #fff;
+    color: #4137cc;
     border: 2px solid white;
     font-family: roboto;
-    font-weight: 20px;
+    font-size: 20px;
+    font-weight: 800;
     text-transform: uppercase;
     text-align: center;
     line-height: 1;
-    background-color : transparent;
-    padding: 10px;
+    background-color : white;
+    padding: 15px;
     outline: none;
-    border-radius: 40px;
+    border-radius: 5px;
 }
+
+.navigation ul li a:hover{
+    background-image: linear-gradient(90deg, #4591e8 0%, #3e8de7 20%,#3789e6 40%, #3084e5 60%,#2880e4 80%);
+    animation:slidebg 5s linear infinite;
+    color: white;
+}
+
+@keyframes slidebg {
+    to {
+      background-position:20vw;
+    }
+  }
+
 
 
 /*SEKJCA WYSZUKIWANIA*/
@@ -122,12 +137,12 @@ main{
 footer{
     margin: 0;
     padding: 0;
-    background-color: #0a3d62;
+    background-color: #4137cc;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 15vh;
-    border-radius: 10px;
+    border-radius: 70% 50% 0% 0%;
 }
 
 .socials a{
