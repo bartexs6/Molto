@@ -13,7 +13,7 @@
     
     <nav>
         <div class="logo">
-            <img src="" alt="logo">
+            <img src="vizualization/mol.png" alt="logo" width="160" height="50">
         </div>
         
         <div class="navigation">
@@ -45,6 +45,38 @@
             
         <!--SEKCJA KATEGORII-->
         <section class="categories">
+            <div class="topic">Kategorie</div>
+            <div class="ctg">
+                <div class="c1">
+                    <a href="#">
+                        <img src="vizualization/moto.png" alt="moto" width="100" height="100"></a>
+                </div>
+                
+                <div class="c2">
+                    <a href="#">
+                        <img src="vizualization/nieruchmosc.png" alt="nieruchmosc" width="100" height="100"></a>
+                </div>
+
+                <div class="c3">
+                    <a href="#">
+                        <img src="vizualization/phone.png" alt="phone" width="100" height="100"></a>
+                </div>
+
+                <div class="c4">
+                <a href="#">
+                        <img src="vizualization/piła.png" alt="pila" width="100" height="100"></a>
+                </div>
+
+                <div class="c5">
+                <a href="#">
+                        <img src="vizualization/domogrod.png" alt="domogrod" width="100" height="100"></a>
+                </div>
+
+                <div class="c6">
+                <a href="#">
+                        <img src="vizualization/ubrania.png" alt="ubrania" width="100" height="100"></a>
+                </div>
+            </div>
         </section>
     
     
