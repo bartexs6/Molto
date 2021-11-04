@@ -12,15 +12,14 @@ if (isset($_POST['submit']))
     $img_list = array();
 
 for ($i=0; $i < count($_FILES['img_link']['name']); $i++) { 
-  
-    $img_link = $_FILES['img_link']['name'][$i];
-    $img_link = substr($_FILES['img_link']['name'][$i], 10);
+    $img_link = pathinfo($_FILES['img_link']['name'][$i]);
 
-    $destdir = 'ann_img/';
-    $img=file_get_contents($_FILES['img_link']['tmp_name'][$i]);
-    file_put_contents($destdir.substr($img_link, strrpos($img_link,'/')), $img);
+    $newname = $_FILES['img_link']['name'][$i]; 
+    
+    $target = 'ann_img/'.$newname;
+    move_uploaded_file( $_FILES['img_link']['tmp_name'][$i], $target);
 
-    array_push($img_list, $img_link);
+    array_push($img_list, $_FILES['img_link']['name'][$i]);
 }
     
 
@@ -31,7 +30,7 @@ for ($i=0; $i < count($_FILES['img_link']['name']); $i++) {
 
     $user_owner = $_SESSION['id'];
 
-    print_r($img_list);
+    print_r($_FILES['img_link']['name']);
 
     Announcement::addAnnouncement($category, $title, $description, $value, $img_list[0], $contact, $location, $date, $user_owner, $img_list);
 
