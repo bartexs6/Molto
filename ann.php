@@ -42,7 +42,7 @@ if(!isset($_GET["id"]) || !is_numeric($_GET["id"]) || $_GET["id"] <= 0){
 
         echo '<div class="annNavBack">';
         echo '<p>< Wroc</p>';
-        echo '<p>Strona główna / Motoryzacja / '.$announcement->title.'</p>';
+        echo '<p><a href="index.php">Strona główna</a> / '.$announcement->category.' / '.$announcement->title.'</p>';
         echo '</div>';
         echo '<div class="middleContent">';
         echo '<div class="leftBlock">';
@@ -53,7 +53,7 @@ if(!isset($_GET["id"]) || !is_numeric($_GET["id"]) || $_GET["id"] <= 0){
         echo '</div>';
         echo '<div class="annContact">';
         echo '<div class="userProfil">';
-        echo '<h2><i class="far fa-user-circle"></i></h2><div><h2>Janusz</h2><p>Pokaż numer telefonu</p></div>';
+        echo '<h2><i class="far fa-user-circle"></i></h2><div><h2>'.Announcement::getUserById($announcement->user_owner).'</h2><p>Pokaż numer telefonu</p></div>';
         echo '</div>';
         echo '<div class="phone">';
         echo '<div><h2>+48 XXX XXX XXX</h2></div>';
@@ -61,6 +61,16 @@ if(!isset($_GET["id"]) || !is_numeric($_GET["id"]) || $_GET["id"] <= 0){
         echo '</div>';
         echo '</div>';
         echo '<div class="rightBlock">';
+        echo '<div class="imgColumn">';
+        for ($i=0; $i < 3; $i++) { 
+            echo '<img src="ann_img/'.$announcement->img_link.'">';
+        }
+        echo '</div>';
+        echo '<div class="mainImg">';
+        echo '<i class="fas fa-chevron-left"></i>';
+        echo '<img src="ann_img/'.$announcement->img_link.'">';
+        echo '<i class="fas fa-chevron-right"></i>';
+        echo '</div>';
         echo '</div>';
         echo '</div>';
 
@@ -74,7 +84,7 @@ if(!isset($_GET["id"]) || !is_numeric($_GET["id"]) || $_GET["id"] <= 0){
         echo '</div>';
 
     } catch (Exception $e) {
-        show_error("Wystąpił błąd podczas ładowania ogłoszenia");
+       show_error("Wystąpił błąd podczas ładowania ogłoszenia");
     }
 }
 

@@ -230,6 +230,7 @@ footer{
 
 /*KALISZA STYLE*/
 .randomAnn {
+    cursor: pointer;
     border-radius: 4px;
     text-align: center;
     display: flex;
@@ -261,18 +262,6 @@ footer{
 #a {
     display: flex;
 }
-/*
-.randomAnn span{
-    background-color: #675682;
-    display: block;
-}
-
-.randomAnn span:nth-child(1){ 
-    left: 50%;
-    width: 2px;
-    height: 10px;
-}
-*/
 
 .randomAnn img {
     border-left: 4px solid #654796;

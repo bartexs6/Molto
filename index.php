@@ -25,7 +25,11 @@
         </div>
 
     </nav>
-
+    <script>
+    function openAnn(id){
+        location.assign("ann.php?id=" + id);
+    }
+</script>
     <main>
         
         <!--SEKCJA WYSZUKIWANIA PRZEDMIOTU--> 
@@ -92,10 +96,10 @@ include_once("error.php");
 echo '<link href="style/styl.css" rel="stylesheet">';
 
 User::login("ada", "test");
-if(isset($_SESSION['logged']) && $_SESSION['logged'] == TRUE){
+/*if(isset($_SESSION['logged']) && $_SESSION['logged'] == TRUE){
     echo "Witaj " . $_SESSION['username'];
 
-}
+}*/
 
 
 //$conn = databaseConnect::connect();
@@ -108,7 +112,7 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == TRUE){
 
     $a = Announcement::getRandom(6);
 for ($i=0; $i < 6; $i++) { 
-    echo '<div class="randomAnn">';
+    echo '<div class="randomAnn" onclick="openAnn('.$a[$i]->id.')">';
     echo '<img src="ann_img/'.$a[$i]->img_link.'">';
     echo '<h3>'.$a[$i]->title.'</h3>';
     echo '<p>'.$a[$i]->date.'</p>';

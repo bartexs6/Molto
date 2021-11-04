@@ -1,84 +1,125 @@
-
 main {
-    padding: 4vh 4vw 4vh 4vw;
+  padding: 4vh 4vw 4vh 4vw;
 }
-.annNavBack{
-    width: 26vw;
-    display: flex;
-    justify-content: space-between;
-    font-family: "Prompt", sans-serif;
-    font-weight: 100;
+.annNavBack {
+  width: 26vw;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Prompt", sans-serif;
+  font-weight: 100;
 }
-.middleContent{
-    display: flex;
-    justify-content: space-between;
-    height: 80vh;
+.annNavBack a{
+  text-decoration: none;
+  color: black;
 }
-.leftBlock{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-radius: 0px 20px 0px 20px;
-    background-color: white;
-    height: 80%;
-    width: 40%;
+.middleContent {
+  display: flex;
+  justify-content: space-between;
+  height: 80vh;
 }
-.leftBlock .annInfo{
-    padding: 0px 20px 0px 20px;
+.leftBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0px 20px 0px 20px;
+  background-color: white;
+  height: 80%;
+  width: 40%;
 }
-.leftBlock .annInfo h2{
-    font-family: "Prompt", sans-serif;
-    font-weight: 400;
-    margin-bottom: 0;
+.leftBlock .annInfo {
+  padding: 0px 20px 0px 20px;
 }
-.leftBlock .annInfo p{
-    font-family: "Prompt", sans-serif;
-    font-weight: 100;
-    margin-top: 0.1em;
+.leftBlock .annInfo h2 {
+  font-family: "Prompt", sans-serif;
+  font-weight: 400;
+  margin-bottom: 0;
 }
-.leftBlock .annContact{
-    margin: 0px 20px 20px 20px;
+.leftBlock .annInfo p {
+  font-family: "Prompt", sans-serif;
+  font-weight: 100;
+  margin-top: 0.1em;
 }
-.leftBlock .annContact .userProfil{
-    background-color: beige;
-display: flex;
-justify-content: left;
-align-items: center;
-height: 14vh;
+.leftBlock .annContact {
+  margin: 0px 20px 20px 20px;
 }
-
-.leftBlock .annContact .phone{
-    background-color: beige;
-    margin-top: 2vh;
-    display: flex;
-    justify-content: center;
-    }
-
-.leftBlock .annContact .userProfil div{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    }
-    .leftBlock .annContact .userProfil p{
-        margin-left: 2vw;
-        margin-top: 0px;
-        }
-.leftBlock .annContact h2{
-    margin-top: 0;
-margin-left: 2vw;
-    font-family: "Prompt", sans-serif;
-    font-weight: 400;
-    margin-bottom: 0;
+.leftBlock .annContact .userProfil {
+  border-radius: 20px 0px 20px 0px;
+  background-color: beige;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 14vh;
 }
 
-.leftBlock .annContact .userProfil i{
-    font-size: 4em;
-    }
+.leftBlock .annContact .phone {
+  border-radius: 20px 0px 20px 0px;
+  background-color: beige;
+  margin-top: 2vh;
+  display: flex;
+  justify-content: center;
+}
 
-.rightBlock{
-    border-radius: 20px 0px 20px 0px;
+.leftBlock .annContact .userProfil div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.leftBlock .annContact .userProfil p {
+  margin-left: 2vw;
+  margin-top: 0px;
+}
+.leftBlock .annContact h2 {
+  margin-top: 0;
+  margin-left: 2vw;
+  font-family: "Prompt", sans-serif;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.leftBlock .annContact .userProfil i {
+  font-size: 4em;
+}
+
+.rightBlock {
+    display: flex;
+    justify-content: space-around;
+
+  border-radius: 20px 0px 20px 0px;
+  margin-left: 2vw;
+  background-color: white;
+  height: 80%;
+  width: 80%;
+}
+
+.rightBlock .imgColumn{
+    display: flex;
     margin-left: 2vw;
-    background-color: white;
-    height: 80%;
-    width: 80%;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    width: 20%;
+}
+
+.rightBlock .imgColumn img{
+    object-fit: cover;
+    object-position: 100% 0;
+    width: 10vw;
+    box-shadow: 2px 2px 5px gray;
+}
+.mainImg{
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.mainImg img{
+    margin: auto;
+    object-fit: cover;
+    object-position: 0 0;
+    max-height: 80%;
+    max-width: 80%;
+    box-shadow: 2px 2px 5px gray;
+}
+.mainImg i{
+  margin: 5%;
 }
