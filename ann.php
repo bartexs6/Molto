@@ -1,3 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molto</title>
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/annstyle.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+</head>
+
+<body>
+    
+    <nav>
+        <div class="logo">
+            <img src="" alt="logo">
+        </div>
+        
+        <div class="navigation">
+            <ul>
+                <li><a href="#main">Główna</a></li>
+                <li><a href="addAnnForm.php">Dodaj ogłoszenie</a></li>
+                <li><a href="login.php">Konto</a></li> 
+            </ul>
+        </div>
+
+    </nav>
+    <main>
 <?php
 include_once("connect.php");
 include_once("announcement.php");
@@ -10,10 +40,34 @@ if(!isset($_GET["id"]) || !is_numeric($_GET["id"]) || $_GET["id"] <= 0){
     try {
         $announcement = Announcement::getById($_GET["id"]);
 
-        echo '<style>img{height: 200px; width: 200px;}</style>';
+        echo '<div class="annNavBack">';
+        echo '<p>< Wroc</p>';
+        echo '<p>Strona główna / Motoryzacja / '.$announcement->title.'</p>';
+        echo '</div>';
+        echo '<div class="middleContent">';
+        echo '<div class="leftBlock">';
+        echo '<div class="annInfo">';
+        echo '<h2>'.$announcement->title.'</h2>';
+        echo '<p>'.$announcement->location." ".$announcement->date.'</p>';
+        echo '<h2><i class="fas fa-shopping-cart"></i> '.$announcement->value.' zł</h2>';
+        echo '</div>';
+        echo '<div class="annContact">';
+        echo '<div class="userProfil">';
+        echo '<h2><i class="far fa-user-circle"></i></h2><div><h2>Janusz</h2><p>Pokaż numer telefonu</p></div>';
+        echo '</div>';
+        echo '<div class="phone">';
+        echo '<div><h2>+48 XXX XXX XXX</h2></div>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+        echo '<div class="rightBlock">';
+        echo '</div>';
+        echo '</div>';
 
-        echo '<div class="randomAnn">';
-        echo '<img src="ann_img/'.$announcement->img_link.'">';
+
+
+        echo '<div class="brak">';
+        //echo '<img src="ann_img/'.$announcement->img_link.'">';
         echo '<h3>'.$announcement->title.'</h3>';
         echo '<p>'.$announcement->date.'</p>';
         echo '<p>'.$announcement->value.' zł</p>';
@@ -25,3 +79,6 @@ if(!isset($_GET["id"]) || !is_numeric($_GET["id"]) || $_GET["id"] <= 0){
 }
 
 ?>
+</main>
+</body>
+</html>
