@@ -36,8 +36,8 @@ class Announcement{
 
 
     // Dodawanie ogloszen do bazy
-    public static function addAnnouncement($category, $title, $description, $value, $img_link, $contact, $location, $date, $user_owner, $img_id){
-        if(empty($category) || empty($title) || empty($description) || empty($value) || empty($img_link) || empty($contact) || empty($location) || empty($date) || empty($user_owner) || empty($img_id)){
+    public static function addAnnouncement($category, $title, $description, $value, $img_link, $contact, $location, $date, $user_owner, $img_list){
+        if(empty($category) || empty($title) || empty($description) || empty($value) || empty($img_link) || empty($contact) || empty($location) || empty($date) || empty($user_owner) || empty($img_list)){
             show_error("Problem z dodaniem ogłoszenia");
             throw new Exception("Empty variable(s)", 1);
         }
@@ -52,11 +52,26 @@ class Announcement{
             throw new Exception("Value error", 1);
         }
 
+        
+
         if(strlen($title) < Announcement::MAX_TITLE_LENGTH && strlen($description) < Announcement::MAX_DESCRIPTION_LENGTH && strlen($img_link) < Announcement::MAX_IMGLINK_LENGTH && strlen($contact) < Announcement::MAX_CONTACT_LENGTH && strlen($location) < Announcement::MAX_LOCATION_LENGTH){
             $conn = DatabaseConnect::connect();
-            $cmd = mysqli_prepare($conn, "INSERT INTO `announcement`(`category`, `title`, `description`, `value`, `img_link`, `contact`, `location`, `date`, `user_owner`) VALUES (?,?,?,?,?,?,?,?,?)");
+
+            $cmd = mysqli_prepare($conn, "INSERT INTO `imgdata`(`first_img_link`, `second_img_link`, `third_img_link`) VALUES (?,?,?)");
     
-            mysqli_stmt_bind_param($cmd, "sssissssi", $category, $title, $description, $value, $img_link, $contact, $location, $date, $user_owner);
+            $first_img = $img_link;
+            $second_img = $img_list[1] ?? "NULL";
+            $third_img = $img_list[2] ?? "NULL";
+
+            mysqli_stmt_bind_param($cmd, "sss", $first_img, $second_img, $third_img);
+            mysqli_stmt_execute($cmd);
+
+            
+            $cmd = mysqli_prepare($conn, "INSERT INTO `announcement`(`category`, `title`, `description`, `value`, `img_link`, `contact`, `location`, `date`, `user_owner`, `img_id`) VALUES (?,?,?,?,?,?,?,?,?,?)");
+            
+            $last_id = mysqli_insert_id($conn);
+
+            mysqli_stmt_bind_param($cmd, "sssissssii", $category, $title, $description, $value, $img_link, $contact, $location, $date, $user_owner, $last_id);
             mysqli_stmt_execute($cmd);
     
             $getResult = mysqli_stmt_get_result($cmd);

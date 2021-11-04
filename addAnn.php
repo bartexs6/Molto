@@ -9,13 +9,20 @@ if (isset($_POST['submit']))
     $title = $_POST['title'];
     $description = $_POST['description'];
     $value = $_POST['value'];
-    $img_link = $_FILES['img_link']['name'];
+    $img_list = array();
 
-    $img_link = substr($_FILES['img_link']['name'], 10);
+for ($i=0; $i < count($_FILES['img_link']['name']); $i++) { 
+  
+    $img_link = $_FILES['img_link']['name'][$i];
+    $img_link = substr($_FILES['img_link']['name'][$i], 10);
 
     $destdir = 'ann_img/';
-    $img=file_get_contents($_FILES['img_link']['tmp_name']);
+    $img=file_get_contents($_FILES['img_link']['tmp_name'][$i]);
     file_put_contents($destdir.substr($img_link, strrpos($img_link,'/')), $img);
+
+    array_push($img_list, $img_link);
+}
+    
 
     $contact = $_POST['phone'];
     $location = $_POST['location'];
@@ -24,7 +31,9 @@ if (isset($_POST['submit']))
 
     $user_owner = $_SESSION['id'];
 
-    Announcement::addAnnouncement($category, $title, $description, $value, $img_link, $contact, $location, $date, $user_owner);
+    print_r($img_list);
+
+    Announcement::addAnnouncement($category, $title, $description, $value, $img_list[0], $contact, $location, $date, $user_owner, $img_list);
 
 }
 

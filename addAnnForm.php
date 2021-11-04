@@ -39,7 +39,7 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == TRUE){
         <input type="text" name="title" placeholder="tytuł" required><br>
         <textarea name="description" placeholder="opis" rows="5" cols="40"></textarea><br>
         <input type="number" name="value" placeholder="cena" required><br>
-        <input type="file" name="img_link" accept=".jpg, .jpeg, .png" multiple><br>
+        <input type="file" name="img_link[]" accept=".jpg, .jpeg, .png" multiple><br>
         <input type="tel" name="phone" placeholder="numer tel." pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required><br>
         <input type="text" name="location" placeholder="lokacja" required><br>
         <input type="submit" name="submit" value="Dodaj!">

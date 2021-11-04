@@ -63,7 +63,9 @@ if(!isset($_GET["id"]) || !is_numeric($_GET["id"]) || $_GET["id"] <= 0){
         echo '<div class="rightBlock">';
         echo '<div class="imgColumn">';
         for ($i=0; $i < 3; $i++) { 
-            echo '<img src="ann_img/'.Announcement::getImgById($announcement->img_id)[$i].'">';
+            if(Announcement::getImgById($announcement->img_id)[$i] != "NULL"){
+                echo '<img src="ann_img/'.Announcement::getImgById($announcement->img_id)[$i].'">';
+            }
         }
         echo '</div>';
         echo '<div class="mainImg">';
