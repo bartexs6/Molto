@@ -1,22 +1,21 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:100");
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;400;500&display=swap');
+
 body{
-    background-color: lavenderblush;
+    background-color: #f1f1f1;
     margin: 0;
 }
 
 /*SEKCJA NAVIGACJI*/
-
 nav{
     display: flex;
     justify-content: flex-end;
     justify-content: space-between;
-    background-color: #4137cc;
+    background-color: #282828;
     padding: 8px;
-    height: 8vh;
-    border-radius: 0% 0% 20% 30%;
+    height: 6vh;
 }
 
-.categories{
+.random{
     display: flex;
 }
 
@@ -43,41 +42,27 @@ nav{
 }
 
 .navigation ul li a{
-    color: #4137cc;
-    border: 2px solid white;
-    font-family: roboto;
-    font-size: 20px;
+    padding: 1vh;
+    font-weight: 1000;
+    letter-spacing: 2px;
+    font-family: "Prompt", sans-serif;
     font-weight: 800;
-    text-transform: uppercase;
-    text-align: center;
-    line-height: 1;
-    background-color : white;
-    padding: 15px;
-    outline: none;
-    border-radius: 5px;
+
 }
 
 .navigation ul li a:hover{
-    background-image: linear-gradient(90deg, #4591e8 0%, #3e8de7 20%,#3789e6 40%, #3084e5 60%,#2880e4 80%);
-    animation:slidebg 5s linear infinite;
-    color: white;
+    color: #675682;
+    border-radius: 0px 20px 0px 20px;
 }
-
-@keyframes slidebg {
-    to {
-      background-position:20vw;
-    }
-  }
-
 
 
 /*SEKJCA WYSZUKIWANIA*/
 .search{
+    margin-top: 4vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px;
-    height: 50px;
+    height: 6vh;
     background-color: #fff;
     border-radius: 60px;
     width: 50%;
@@ -102,7 +87,7 @@ nav{
 
 .search .input input{
     padding: 5px;
-    font-size: 20px;
+    font-size: 30px;
     border: none;
     background-color: #fff;
     border-radius: 60px;
@@ -112,23 +97,23 @@ nav{
 .search .logo_search button{
     padding: 8px;
     width: 30%;
-    background: #2196F3;
+    background: #675682;
     color: white;
-    font-size: 20px;
+    font-size: 25px;
     border: none;
     border-radius: 60px;
     cursor: pointer;
 }
 
 .search .logo_search button:hover{
-    background: #0b7dda;
+    background: #5f0f4e;
 }
 
 
 /*SKEJCA GŁOWNA*/
 main{
-    height: 75vh;
-    
+    height: 90vh;
+    background-color: #f1f1f1;
 }
 
 
@@ -137,12 +122,11 @@ main{
 footer{
     margin: 0;
     padding: 0;
-    background-color: #4137cc;
+    background-color: #282828;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 15vh;
-    border-radius: 70% 50% 0% 0%;
+    min-height: 14vh;
 }
 
 .socials a{
@@ -205,3 +189,35 @@ footer{
 }
 
 
+/*KALISZA STYLE*/
+.randomAnn {
+    border-radius: 4px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin: 2%;
+    padding: 1%;
+    width: 12vw;
+    height: 35vh;
+}
+.randomAnn p {
+    margin-bottom: -1vh;
+    font-family: "Prompt", sans-serif;
+    font-weight: 100;
+}
+.randomAnn img {
+    width: 90%;
+}
+
+.randomAnn h3{
+    font-family: "Prompt", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+  
+#a {
+    display: flex;
+}
