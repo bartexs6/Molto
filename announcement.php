@@ -17,9 +17,10 @@ class Announcement{
     public $location;
     public $date;
     public $user_owner;
+    public $img_id;
 
     // NIE UZYWAC KONSTRUKTORA (Od tego jest addAnnouncement)
-    function __construct($id, $category, $title, $description, $value, $img_link, $contact, $location, $date, $user_owner) {
+    function __construct($id, $category, $title, $description, $value, $img_link, $contact, $location, $date, $user_owner, $img_id) {
         $this->id = $id;
         $this->title = $title;
         $this->category = $category;
@@ -30,12 +31,13 @@ class Announcement{
         $this->location = $location;
         $this->date = $date;
         $this->user_owner = $user_owner;
+        $this->img_id = $img_id;
       }
 
 
     // Dodawanie ogloszen do bazy
-    public static function addAnnouncement($category, $title, $description, $value, $img_link, $contact, $location, $date, $user_owner){
-        if(empty($category) || empty($title) || empty($description) || empty($value) || empty($img_link) || empty($contact) || empty($location) || empty($date) || empty($user_owner)){
+    public static function addAnnouncement($category, $title, $description, $value, $img_link, $contact, $location, $date, $user_owner, $img_id){
+        if(empty($category) || empty($title) || empty($description) || empty($value) || empty($img_link) || empty($contact) || empty($location) || empty($date) || empty($user_owner) || empty($img_id)){
             show_error("Problem z dodaniem ogłoszenia");
             throw new Exception("Empty variable(s)", 1);
         }
@@ -90,7 +92,7 @@ class Announcement{
         mysqli_close($conn);
 
         if(isset($row)){
-            return new Announcement($row[0],$row[1],$row[2],$row[3],$row[4],$row[5],$row[6],$row[7],$row[8],$row[9]);
+            return new Announcement($row[0],$row[1],$row[2],$row[3],$row[4],$row[5],$row[6],$row[7],$row[8],$row[9],$row[10]);
         }else{
             throw new Exception("Cannot find announcement", 1);
         }
@@ -127,6 +129,7 @@ class Announcement{
         }
     }
 
+    // Pobieranie nazwy uzytkownika po id ogloszenia
     public static function getUserById(int $id){
         $conn = DatabaseConnect::connect();
         $cmd = mysqli_prepare($conn, "SELECT username FROM user WHERE id=?");
@@ -146,6 +149,26 @@ class Announcement{
             throw new Exception("Cannot find announcement", 1);
         }
     }
-    // INSERT INTO `announcement`(`id`, `category`, `title`, `description`, `value`, `img_link`, `contact`, `location`, `date`, `user_owner`) VALUES (null,"elektronika","asda","dgfdsgd",13,"/brak.png","asdsadad","dsfdsfdsf","2021-10-10",1)
+   
+    // Pobieranie zdjec oglosznia
+    public static function getImgById(int $id){
+        $conn = DatabaseConnect::connect();
+        $cmd = mysqli_prepare($conn, "SELECT first_img_link,second_img_link,third_img_link FROM imgdata WHERE id=?");
+
+        mysqli_stmt_bind_param($cmd, "i", $id);
+        mysqli_stmt_execute($cmd);
+
+        $getResult = mysqli_stmt_get_result($cmd);
+ 
+        $row = mysqli_fetch_row($getResult);
+
+        mysqli_close($conn);
+
+        if(isset($row)){
+            return $row;
+        }else{
+            throw new Exception("Cannot find announcement", 1);
+        }
+    } 
 }
 ?>

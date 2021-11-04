@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 04 Lis 2021, 09:18
--- Wersja serwera: 10.4.17-MariaDB
--- Wersja PHP: 8.0.2
+-- Czas generowania: 04 Lis 2021, 18:07
+-- Wersja serwera: 10.4.20-MariaDB
+-- Wersja PHP: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,58 +37,21 @@ CREATE TABLE `announcement` (
   `contact` text COLLATE utf8_polish_ci NOT NULL,
   `location` tinytext COLLATE utf8_polish_ci NOT NULL,
   `date` datetime NOT NULL,
-  `user_owner` int(11) NOT NULL
+  `user_owner` int(11) NOT NULL,
+  `img_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
 -- Zrzut danych tabeli `announcement`
 --
 
-INSERT INTO `announcement` (`id`, `category`, `title`, `description`, `value`, `img_link`, `contact`, `location`, `date`, `user_owner`) VALUES
-(1, 'motoryzacja', 'Opel Corsa C NOWOSC', 'asdsadsadsadsadsa', 12, 'brak.jpg', 'asdasd', 'sadsadas', '2021-10-28 14:33:22', 1),
-(2, 'motoryzacja', 'Opel Corsa C rocznik 2003', 'asdsadsadsadsadsa', 4510, 'opel1.jpg', 'asdasd', 'sadsadas', '2021-10-28 14:33:22', 1),
-(3, 'motoryzacja', 'Opel Corsa C bezwypadkowy niemiec plakal', 'asdsadsadsadsadsa', 1999, 'opel2.jpg', 'asdasd', 'sadsadas', '2021-10-28 14:33:22', 1),
-(4, 'motoryzacja', 'Opel Corsa C 2003 dziala', 'asdsadsadsadsadsa', 87, 'opel3.jpg', 'asdasd', 'sadsadas', '2021-10-28 14:33:22', 1),
-(5, 'motoryzacja', 'Opel Corsa C na czesci', 'asdsadsadsadsadsa', 12, 'opel4.jpg', 'asdasd', 'sadsadas', '2021-10-23 14:32:12', 1),
-(6, 'motoryzacja', 'Opel Corsa C sprzedam', 'asdsadsadsadsadsa', 65, 'opel5.jpg', 'asdasd', 'sadsadas', '2021-10-11 12:54:23', 1);
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `user`
---
-
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
-  `username` text COLLATE utf8_polish_ci NOT NULL,
-  `password` text COLLATE utf8_polish_ci NOT NULL,
-  `email` text COLLATE utf8_polish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
-
---
--- Zrzut danych tabeli `user`
---
-
-INSERT INTO `user` (`id`, `username`, `password`, `email`) VALUES
-(1, 'tomek1332', 'asd', 'a@a.pl'),
-(2, 'ada', '098f6bcd4621d373cade4e832627b4f6', 'bp@bp.pl'),
-(3, 'test', '098f6bcd4621d373cade4e832627b4f6', 'email@email.pl');
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `userdata`
---
-
-CREATE TABLE `userdata` (
-  `id` int(11) NOT NULL,
-  `name` text COLLATE utf8_polish_ci NOT NULL,
-  `surname` text COLLATE utf8_polish_ci NOT NULL,
-  `location` text COLLATE utf8_polish_ci NOT NULL,
-  `phone_number` text COLLATE utf8_polish_ci NOT NULL,
-  `ann_list` text COLLATE utf8_polish_ci NOT NULL,
-  `user_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+INSERT INTO `announcement` (`id`, `category`, `title`, `description`, `value`, `img_link`, `contact`, `location`, `date`, `user_owner`, `img_id`) VALUES
+(1, 'motoryzacja', 'Opel Corsa C NOWOSC', 'asdsadsadsadsadsa', 12, 'brak.jpg', 'asdasd', 'sadsadas', '2021-10-28 14:33:22', 1, 1),
+(2, 'motoryzacja', 'Opel Corsa C rocznik 2003', 'asdsadsadsadsadsa', 4510, 'opel1.jpg', 'asdasd', 'sadsadas', '2021-10-28 14:33:22', 1, 1),
+(3, 'motoryzacja', 'Opel Corsa C bezwypadkowy niemiec plakal', 'asdsadsadsadsadsa', 1999, 'opel2.jpg', 'asdasd', 'sadsadas', '2021-10-28 14:33:22', 1, 1),
+(4, 'motoryzacja', 'Opel Corsa C 2003 dziala', 'asdsadsadsadsadsa', 87, 'opel3.jpg', 'asdasd', 'sadsadas', '2021-10-28 14:33:22', 1, 1),
+(5, 'motoryzacja', 'Opel Corsa C na czesci', 'asdsadsadsadsadsa', 12, 'opel4.jpg', 'asdasd', 'sadsadas', '2021-10-23 14:32:12', 1, 1),
+(6, 'motoryzacja', 'Opel Corsa C sprzedam', 'asdsadsadsadsadsa', 65, 'opel5.jpg', 'asdasd', 'sadsadas', '2021-10-11 12:54:23', 1, 1);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -99,20 +62,8 @@ CREATE TABLE `userdata` (
 --
 ALTER TABLE `announcement`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `owner_id` (`user_owner`);
-
---
--- Indeksy dla tabeli `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indeksy dla tabeli `userdata`
---
-ALTER TABLE `userdata`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD KEY `owner_id` (`user_owner`),
+  ADD KEY `img_data` (`img_id`);
 
 --
 -- AUTO_INCREMENT dla zrzuconych tabel
@@ -125,18 +76,6 @@ ALTER TABLE `announcement`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT dla tabeli `user`
---
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT dla tabeli `userdata`
---
-ALTER TABLE `userdata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- Ograniczenia dla zrzutów tabel
 --
 
@@ -144,13 +83,8 @@ ALTER TABLE `userdata`
 -- Ograniczenia dla tabeli `announcement`
 --
 ALTER TABLE `announcement`
+  ADD CONSTRAINT `img_data` FOREIGN KEY (`img_id`) REFERENCES `imgdata` (`id`),
   ADD CONSTRAINT `owner_id` FOREIGN KEY (`user_owner`) REFERENCES `user` (`id`);
-
---
--- Ograniczenia dla tabeli `userdata`
---
-ALTER TABLE `userdata`
-  ADD CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

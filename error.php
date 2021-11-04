@@ -1,5 +1,5 @@
 <?php
-set_exception_handler(function (Exception $ex) {
+set_exception_handler(function ( $ex) {
     error_log($ex, 0);
 
 	show_error("Nieznany błąd");
