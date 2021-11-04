@@ -1,3 +1,21 @@
+<?php
+    include_once("user.php");
+
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    if(isset($_SESSION['logged']) && $_SESSION['logged'] == TRUE){
+        header("Location: index.php");
+    }
+
+    if(isset($_POST["name"]) && isset($_POST["password"])){
+        $result = User::login($_POST["name"], $_POST["password"]);
+        if($result == FALSE){
+            echo "Nieprawidłowe dane logowania";
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -16,12 +34,12 @@
         </div>
 
         <div class="login_section">
-            <form action="" method="">
-                <label for="email">Email</label><br>
-                    <input type="email" required><br>
-                <label for="password">Password</label><br>
-                    <input type="password" required><br>
-                <button type="submit">LOGIN</button>
+            <form action="login.php" method="POST">
+                <label for="name">Login</label><br>
+                    <input type="text" name="name" required><br>
+                <label for="password">Hasło</label><br>
+                    <input type="password" name="password" required><br>
+                <button type="submit">Zaloguj</button>
             </form>
         </div>
 

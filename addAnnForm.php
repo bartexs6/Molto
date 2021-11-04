@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +18,9 @@ session_start();
 if(isset($_SESSION['logged']) && $_SESSION['logged'] == TRUE){
     echo "Dodajesz ogloszenie jako: " . $_SESSION['username'];
 
+}else{
+    echo "Aby dodać ogłoszenia musisz się zalogować";
+    return;
 }
 
 ?>

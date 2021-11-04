@@ -1,4 +1,6 @@
 <?php
+include_once("connect.php");
+
 class User{
 
     const MAX_USERNAME_LENGTH = 21;
@@ -77,8 +79,10 @@ class User{
     // Logowanie
     public static function login($username, $password) : bool{
         if(User::loginValidate($username, $password)){
-            session_start();
-            session_regenerate_id();
+            if (session_status() === PHP_SESSION_NONE) {
+                session_start();
+                session_regenerate_id();
+            }
             $_SESSION['logged'] = TRUE;
             $_SESSION['username'] = $username;
             $_SESSION['id'] = User::takeUserId($username);

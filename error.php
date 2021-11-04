@@ -1,10 +1,6 @@
 <?php
 set_exception_handler(function (Exception $ex) {
-$time = date('F j, Y, g:i a e O');
-
-	//$message = "[{$time}] {$ex->getMessage()}\n";
-
-	//error_log($message, 3, 'logs/errors.log');
+    error_log($ex, 0);
 
 	show_error("Nieznany błąd");
 });

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 31 Paź 2021, 20:22
--- Wersja serwera: 10.4.20-MariaDB
--- Wersja PHP: 8.0.9
+-- Czas generowania: 04 Lis 2021, 09:18
+-- Wersja serwera: 10.4.17-MariaDB
+-- Wersja PHP: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -71,7 +71,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `username`, `password`, `email`) VALUES
 (1, 'tomek1332', 'asd', 'a@a.pl'),
-(2, 'ada', '098f6bcd4621d373cade4e832627b4f6', 'bp@bp.pl');
+(2, 'ada', '098f6bcd4621d373cade4e832627b4f6', 'bp@bp.pl'),
+(3, 'test', '098f6bcd4621d373cade4e832627b4f6', 'email@email.pl');
 
 -- --------------------------------------------------------
 
@@ -127,7 +128,7 @@ ALTER TABLE `announcement`
 -- AUTO_INCREMENT dla tabeli `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT dla tabeli `userdata`
