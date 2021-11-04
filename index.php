@@ -42,9 +42,14 @@
                 
             </form>
         </div>
-
+            
         <!--SEKCJA KATEGORII-->
         <section class="categories">
+        </section>
+    
+    
+        <!--SEKCJA LOSOWYCH OGŁOSSZEŃ-->
+        <section class="random">
 
         <?php
 include_once("connect.php");
