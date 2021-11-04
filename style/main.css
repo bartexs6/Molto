@@ -115,12 +115,45 @@ nav .logo {
 
 /*SKEJCA GŁOWNA*/
 main{
-    height: 90vh;
     background-color: #f1f1f1;
 }
 
 .random{
     display: flex;
+}
+
+
+/*SEKCJA KATEGORII*/
+.categories{
+    margin: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    height: 24vh;
+    background-color: #675682;
+    border-radius: 0px 20px 0px 20px;
+}
+
+.ctg{
+    display: flex;
+    flex-direction: row;
+}
+
+.ctg div{
+    padding: 30px;
+}
+
+.categories .topic{
+    color: #eaeaea;
+    text-transform: uppercase;
+    font-family: "PROMPT", sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+    letter-spacing: 5px;
 }
 
 
