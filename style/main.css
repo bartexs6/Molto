@@ -12,11 +12,14 @@ nav{
     justify-content: space-between;
     background-color: #282828;
     padding: 8px;
-    height: 6vh;
+    height: 7vh;
 }
 
-.random{
+nav .logo {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5vh;
 }
 
 .navigation{
@@ -28,6 +31,7 @@ nav{
     justify-content: flex-end;
     display: flex;
     justify-content: space-between;
+ 
 }
 
 .navigation ul a{
@@ -47,7 +51,6 @@ nav{
     letter-spacing: 2px;
     font-family: "Prompt", sans-serif;
     font-weight: 800;
-
 }
 
 .navigation ul li a:hover{
@@ -116,6 +119,9 @@ main{
     background-color: #f1f1f1;
 }
 
+.random{
+    display: flex;
+}
 
 
 /*  FOOTER SECTION */  
@@ -202,6 +208,7 @@ footer{
     padding: 1%;
     width: 12vw;
     height: 35vh;
+    border-radius: 0px 20px 0px 20px;
 }
 .randomAnn p {
     margin-bottom: -1vh;
@@ -220,4 +227,23 @@ footer{
   
 #a {
     display: flex;
+}
+/*
+.randomAnn span{
+    background-color: #675682;
+    display: block;
+}
+
+.randomAnn span:nth-child(1){ 
+    left: 50%;
+    width: 2px;
+    height: 10px;
+}
+*/
+
+.randomAnn img {
+    border-left: 4px solid #654796;
+    border-bottom: 4px solid #654796;
+    padding: 1px;
+    border-radius: 10px;
 }
