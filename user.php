@@ -29,7 +29,8 @@ class User{
         
                 $password = md5($password);
         
-                mysqli_stmt_bind_param($cmd, "ssss", $username, $password, $email, "123-123-123");
+                $phone_number = "123-123-123";
+                mysqli_stmt_bind_param($cmd, "ssss", $username, $password, $email, $phone_number);
                 mysqli_stmt_execute($cmd);
         
                 $getResult = mysqli_stmt_get_result($cmd);

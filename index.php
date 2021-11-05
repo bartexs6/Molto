@@ -10,21 +10,10 @@
 </head>
 
 <body>
-    
-    <nav>
-        <div class="logo">
-            <img src="vizualization/mol.png" alt="logo" width="160" height="50">
-        </div>
-        
-        <div class="navigation">
-            <ul>
-                <li><a href="#main">Główna</a></li>
-                <li><a href="addAnnForm.php">Dodaj ogłoszenie</a></li>
-                <li><a href="login.php">Konto</a></li> 
-            </ul>
-        </div>
-
-    </nav>
+    <?php
+        include_once("page.php");
+        Page::generateHeader();
+    ?>
     <script>
     function openAnn(id){
         location.assign("ann.php?id=" + id);
@@ -147,16 +136,9 @@ echo $a->category . "|||" . $a->title . "|||" . $a->description . "|||" .$a->dat
 
     </main>
 
-
-    <footer>
-        <div class="socials">      
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>  
-        </div>
-    </footer>
-
+<?php
+Page::generateFooter();
+?>
 
 
 </body>

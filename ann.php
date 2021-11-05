@@ -13,20 +13,10 @@
 
 <body>
     
-    <nav>
-        <div class="logo">
-            <img src="" alt="logo">
-        </div>
-        
-        <div class="navigation">
-            <ul>
-                <li><a href="#main">Główna</a></li>
-                <li><a href="addAnnForm.php">Dodaj ogłoszenie</a></li>
-                <li><a href="login.php">Konto</a></li> 
-            </ul>
-        </div>
-
-    </nav>
+<?php
+        include_once("page.php");
+        Page::generateHeader();
+    ?>
     <main>
 <?php
 include_once("connect.php");
@@ -131,5 +121,10 @@ if(!isset($_GET["id"]) || !is_numeric($_GET["id"]) || $_GET["id"] <= 0){
         <?php echo "<p>$announcement->description</p>" ?>
     </div>
 </section>
+
+<?php
+Page::generateFooter();
+?>
+
 </body>
 </html>
