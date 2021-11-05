@@ -11,6 +11,10 @@ nav{
     justify-content: flex-end;
     justify-content: space-between;
     background-color: #282828;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    width: 100%;
     padding: 8px;
     height: 7vh;
 }
@@ -19,11 +23,12 @@ nav .logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 5vh;
+    margin-left: 5%;
 }
 
 .navigation{
     width: 35%;
+    margin-right: 5%;
 }
 
 .navigation ul{
@@ -61,17 +66,16 @@ nav .logo {
 
 /*SEKJCA WYSZUKIWANIA*/
 .search{
-    margin-top: 4vh;
+    margin-top: 8%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 6vh;
+    height: 7vh;
     background-color: #fff;
     border-radius: 60px;
     width: 50%;
     margin-left: auto;
     margin-right: auto;
-    opacity: 80%;
 }
 
 .search .input{
@@ -125,7 +129,7 @@ main{
 
 /*SEKCJA KATEGORII*/
 .categories{
-    margin: 100px;
+    margin: 4%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -169,6 +173,7 @@ main{
 }
 .categories a p:hover{
     text-decoration: underline;
+    font-size: 120%;
 }
 
 
