@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 04 Lis 2021, 20:34
+-- Czas generowania: 05 Lis 2021, 19:48
 -- Wersja serwera: 10.4.20-MariaDB
 -- Wersja PHP: 8.0.9
 
@@ -88,17 +88,18 @@ CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `username` text COLLATE utf8_polish_ci NOT NULL,
   `password` text COLLATE utf8_polish_ci NOT NULL,
-  `email` text COLLATE utf8_polish_ci NOT NULL
+  `email` text COLLATE utf8_polish_ci NOT NULL,
+  `phone_number` tinytext COLLATE utf8_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
 -- Zrzut danych tabeli `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `password`, `email`) VALUES
-(1, 'tomek1332', 'asd', 'a@a.pl'),
-(2, 'ada', '098f6bcd4621d373cade4e832627b4f6', 'bp@bp.pl'),
-(3, 'test', '098f6bcd4621d373cade4e832627b4f6', 'email@email.pl');
+INSERT INTO `user` (`id`, `username`, `password`, `email`, `phone_number`) VALUES
+(1, 'tomek1332', 'asd', 'a@a.pl', '123-123-123'),
+(2, 'ada', '098f6bcd4621d373cade4e832627b4f6', 'bp@bp.pl', '543-534-345'),
+(3, 'test', '098f6bcd4621d373cade4e832627b4f6', 'email@email.pl', '234-234-231');
 
 -- --------------------------------------------------------
 

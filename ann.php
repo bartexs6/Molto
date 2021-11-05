@@ -31,6 +31,8 @@
 <?php
 include_once("connect.php");
 include_once("announcement.php");
+include_once("user.php");
+
 
 if(!isset($_GET["id"]) || !is_numeric($_GET["id"]) || $_GET["id"] <= 0){
     show_error("Nie można znaleźć ogłoszenia");
@@ -53,10 +55,10 @@ if(!isset($_GET["id"]) || !is_numeric($_GET["id"]) || $_GET["id"] <= 0){
         echo '</div>';
         echo '<div class="annContact">';
         echo '<div class="userProfil">';
-        echo '<h2><i class="far fa-user-circle"></i></h2><div><h2>'.Announcement::getUserById($announcement->user_owner).'</h2><p>Pokaż numer telefonu</p></div>';
+        echo '<h2><i class="far fa-user-circle"></i></h2><div><h2>'.Announcement::getUserById($announcement->user_owner).'</h2><p style="cursor: pointer" onclick="show_phone_number()">Pokaż numer telefonu</p></div>';
         echo '</div>';
         echo '<div class="phone">';
-        echo '<div><h2>+48 XXX XXX XXX</h2></div>';
+        echo '<div><h2 id="phone_number">+48 XXX XXX XXX</h2></div>';
         echo '</div>';
         echo '</div>';
         echo '</div>';
@@ -69,6 +71,10 @@ if(!isset($_GET["id"]) || !is_numeric($_GET["id"]) || $_GET["id"] <= 0){
         }?>
 
     <script>
+
+        function show_phone_number(){
+            document.getElementById("phone_number").innerHTML = "+48 <?php echo User::takePhoneNumber(Announcement::getUserById($announcement->user_owner)) ?>"; 
+        }
 
     var img_list = [];
     var max_img_id = 0;
@@ -119,5 +125,11 @@ if(!isset($_GET["id"]) || !is_numeric($_GET["id"]) || $_GET["id"] <= 0){
 
 ?>
 </main>
+<section>
+    <div id="description">
+        <h2>Opis</h2>
+        <?php echo "<p>$announcement->description</p>" ?>
+    </div>
+</section>
 </body>
 </html>

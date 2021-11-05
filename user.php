@@ -25,11 +25,11 @@ class User{
         if(strlen($username) < User::MAX_USERNAME_LENGTH && strlen($password) < User::MAX_PASSWORD_LENGTH && strlen($email) < User::MAX_EMAIL_LENGTH ){
             if(ctype_alnum($username) && filter_var($email, FILTER_VALIDATE_EMAIL)){
                 $conn = DatabaseConnect::connect();
-                $cmd = mysqli_prepare($conn, "INSERT INTO `user`(`username`, `password`, `email`) VALUES (?,?,?)");
+                $cmd = mysqli_prepare($conn, "INSERT INTO `user`(`username`, `password`, `email`, `phone_number`) VALUES (?,?,?,?)");
         
                 $password = md5($password);
         
-                mysqli_stmt_bind_param($cmd, "sss", $username, $password, $email);
+                mysqli_stmt_bind_param($cmd, "ssss", $username, $password, $email, "123-123-123");
                 mysqli_stmt_execute($cmd);
         
                 $getResult = mysqli_stmt_get_result($cmd);
@@ -109,6 +109,25 @@ class User{
             return $row[0];
         }else{
             return 1;
+        }
+    }
+
+    public static function takePhoneNumber($username){
+        $conn = DatabaseConnect::connect();
+        $cmd = mysqli_prepare($conn, "SELECT phone_number FROM user WHERE username=?");
+
+        mysqli_stmt_bind_param($cmd, "s", $username);
+        mysqli_stmt_execute($cmd);
+
+        $getResult = mysqli_stmt_get_result($cmd);
+ 
+        $row = mysqli_fetch_row($getResult);
+        mysqli_close($conn);
+
+        if(isset($row[0])){
+            return $row[0];
+        }else{
+            return "Brak";
         }
     }
 
