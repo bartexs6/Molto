@@ -121,5 +121,6 @@ main {
     box-shadow: 2px 2px 5px gray;
 }
 .mainImg i{
+  cursor: pointer;
   margin: 5%;
 }

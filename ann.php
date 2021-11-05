@@ -66,12 +66,47 @@ if(!isset($_GET["id"]) || !is_numeric($_GET["id"]) || $_GET["id"] <= 0){
             if(Announcement::getImgById($announcement->img_id)[$i] != "NULL"){
                 echo '<img src="ann_img/'.Announcement::getImgById($announcement->img_id)[$i].'">';
             }
+        }?>
+
+    <script>
+
+    var img_list = [];
+    var max_img_id = 0;
+    <?php
+    for ($i=0; $i < 3; $i++) { 
+        if(Announcement::getImgById($announcement->img_id)[$i] != "NULL"){
+            echo "max_img_id++;";
+            echo 'img_list.push("'.Announcement::getImgById($announcement->img_id)[$i].'");'; 
         }
+    }
+    ?>
+    
+    var current_img = 0; 
+    function next_img(){ 
+        if(current_img < max_img_id){
+            document.getElementById("main_img").src = "ann_img/" + img_list[current_img++] + ""; 
+        }
+    }
+    function previous_img(){ 
+        if(current_img >= img_list.Lenght){
+            current_img=2;
+        }
+        if(current_img <= 1){
+            current_img=1;
+        }
+        if(current_img <= max_img_id || current_img >= 0){
+            document.getElementById("main_img").src = "ann_img/" + img_list[--current_img] + ""; 
+        }
+    }
+    </script>
+
+
+        <?php
         echo '</div>';
         echo '<div class="mainImg">';
-        echo '<i class="fas fa-chevron-left"></i>';
-        echo '<img src="ann_img/'.$announcement->img_link.'">';
-        echo '<i class="fas fa-chevron-right"></i>';
+        echo '<i class="fas fa-chevron-left" onclick="previous_img()"></i>';
+        echo '<img src="ann_img/'.$announcement->img_link.'" id="main_img">';
+        echo '<i class="fas fa-chevron-right" onclick="next_img()"></i>';
         echo '</div>';
         echo '</div>';
         echo '</div>';
