@@ -2,7 +2,7 @@
 class Announcement{
 
     const MAX_TITLE_LENGTH = 21;
-    const MAX_DESCRIPTION_LENGTH = 33;
+    const MAX_DESCRIPTION_LENGTH = 513;
     const MAX_IMGLINK_LENGTH = 65;
     const MAX_CONTACT_LENGTH = 65;
     const MAX_LOCATION_LENGTH = 65;
