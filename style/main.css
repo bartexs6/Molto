@@ -133,7 +133,8 @@ main{
     margin-left: auto;
     margin-right: auto;
     width: 60%;
-    height: 24vh;
+    height: 28vh;
+    padding: 5px;
     background-color: #675682;
     border-radius: 0px 20px 0px 20px;
 }
@@ -154,6 +155,20 @@ main{
     font-weight: 800;
     font-size: 30px;
     letter-spacing: 5px;
+}
+
+.categories a{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-family: "Prompt", sans-serif;
+}
+.categories a p:hover{
+    text-decoration: underline;
 }
 
 
@@ -241,9 +256,14 @@ footer{
     margin: 2%;
     padding: 1%;
     width: 12vw;
-    height: 35vh;
+    height: 36vh;
     border-radius: 0px 20px 0px 20px;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.13),
+    inset -2px -2px 5px rgba(255,255,255,0.13),
+    2px 2px 5px rgba(0,0,0.15),
+    -2px -2px 5px rgba(255,255,255,0.13);
 }
+
 .randomAnn p {
     margin-bottom: -1vh;
     font-family: "Prompt", sans-serif;
