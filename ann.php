@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Molto</title>
     <link rel="stylesheet" href="style/main.css">
-    <link rel="stylesheet" href="style/annstyle.css">
+    <link rel="stylesheet" href="style/annstyle.css" MEDIA="(min-width: 1250px)">
+    <link rel="stylesheet" href="style/annstylephone.css" MEDIA="(max-width: 1249px)">
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 </head>
@@ -34,14 +36,18 @@ if(!isset($_GET["id"]) || !is_numeric($_GET["id"]) || $_GET["id"] <= 0){
 
         echo '<div class="annNavBack">';
         echo '<p>< Wroc</p>';
-        echo '<p><a href="index.php">Strona główna</a> / '.$announcement->category.' / '.$announcement->title.'</p>';
+        echo '<p><a href="index.php">Strona główna</a> / '.$announcement->category.' / '.htmlspecialchars($announcement->title).'</p>';
         echo '</div>';
         echo '<div class="middleContent">';
         echo '<div class="leftBlock">';
         echo '<div class="annInfo">';
-        echo '<h2>'.$announcement->title.'</h2>';
-        echo '<p>'.$announcement->location." ".$announcement->date.'</p>';
+        echo '<h2>'.htmlspecialchars($announcement->title).'</h2>';
+        echo '<p>'.htmlspecialchars($announcement->location)." ".$announcement->date.'</p>';
         echo '<h2><i class="fas fa-shopping-cart"></i> '.$announcement->value.' zł</h2>';
+        echo '</div>';
+        echo '<div class="annButtons">';
+        echo '<p onclick="function al(){alert(`Funkcja tymczasowo niedostępna`)};al()"><i class="far fa-plus-square"></i> Dodaj do ulubionych</p>';
+        echo '<p><a href="report.php?id='.$announcement->id.'"><i class="far fa-flag"></i> Zgłoś</a></p>';
         echo '</div>';
         echo '<div class="annContact">';
         echo '<div class="userProfil">';
@@ -79,8 +85,8 @@ if(!isset($_GET["id"]) || !is_numeric($_GET["id"]) || $_GET["id"] <= 0){
     
     var current_img = 0; 
     function next_img(){ 
-        if(current_img < max_img_id){
-            document.getElementById("main_img").src = "ann_img/" + img_list[current_img++] + ""; 
+        if(current_img < max_img_id - 1){
+            document.getElementById("main_img").src = "ann_img/" + img_list[++current_img] + ""; 
         }
     }
     function previous_img(){ 
@@ -108,8 +114,7 @@ if(!isset($_GET["id"]) || !is_numeric($_GET["id"]) || $_GET["id"] <= 0){
         echo '</div>';
 
     } catch (Exception $e) {
-        echo $e;
-       //show_error("Wystąpił błąd podczas ładowania ogłoszenia");
+       show_error("Wystąpił błąd podczas ładowania ogłoszenia");
     }
 }
 
@@ -118,7 +123,7 @@ if(!isset($_GET["id"]) || !is_numeric($_GET["id"]) || $_GET["id"] <= 0){
 <section>
     <div id="description">
         <h2>Opis</h2>
-        <?php echo "<p>$announcement->description</p>" ?>
+        <p> <?php echo htmlspecialchars("$announcement->description") ?></p>
     </div>
 </section>
 
