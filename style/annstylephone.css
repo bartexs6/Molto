@@ -3,6 +3,7 @@ main{
 }
 section{
   padding: 0vh 4vw 2vh 4vw;
+  margin-top: 2vh;
 
 }
 p {
@@ -20,12 +21,15 @@ a{
 }
 .annNavBack {
   margin-top: 8vh;
-  min-width: 400px;
-  width: 26vw;
+  min-width: 350px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   font-family: "Prompt", sans-serif;
   font-weight: 100;
+}
+.annNavBack p{
+  font-size: 0.8em;
 }
 .annNavBack a{
   text-decoration: none;
@@ -48,8 +52,10 @@ a{
 }
 .middleContent {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  height: 75vh;
+  align-content: center;
+  height: 100vh;
 }
 .leftBlock {
   display: flex;
@@ -57,8 +63,8 @@ a{
   justify-content: space-between;
   border-radius: 0px 20px 0px 20px;
   background-color: white;
-  height: 90%;
-  width: 40%;
+  height: 60%;
+  width: 100%;
 }
 .leftBlock .annInfo {
   padding: 0px 20px 0px 20px;
@@ -68,6 +74,11 @@ a{
   font-weight: 400;
   margin-bottom: 0;
 }
+
+.leftBlock .annInfo h2:nth-child(3) {
+  margin-top: 0;
+}
+
 .leftBlock .annInfo p {
   font-family: "Prompt", sans-serif;
   font-weight: 100;
@@ -111,18 +122,17 @@ a{
 }
 
 .leftBlock .annContact .userProfil i {
-  font-size: 4em;
+  font-size: 3em;
 }
 
 .rightBlock {
     display: flex;
     justify-content: space-around;
-
+  margin-top: 2vh;
   border-radius: 20px 0px 20px 0px;
-  margin-left: 2vw;
   background-color: white;
-  height: 90%;
-  width: 80%;
+  height: 40%;
+  width: 100%;
 }
 
 .rightBlock .imgColumn{
@@ -162,7 +172,7 @@ a{
 #description{
   padding: 0px 20px 0px 20px;
   background-color: white;
-  width: 100%;
+  width: 88%;
   height: 40vh;
   border-radius: 20px 0px 20px 0px;
 }
