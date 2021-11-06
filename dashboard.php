@@ -53,10 +53,14 @@
         <div class="dasOption">
             <!--KOTNO-->
 
-            <!--uSTAWIENIA-->
+            <!--USTAWIENIA-->
 
             <!--OGŁOSZENIA-->
-            
+                <div class="announcements">
+                    <?php
+                        include "addAnnForm.php";
+                    ?>
+                </div>
             <!--POMOC-->
         </div>
 
