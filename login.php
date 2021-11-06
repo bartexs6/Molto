@@ -6,7 +6,7 @@
     }
 
     if(isset($_SESSION['logged']) && $_SESSION['logged'] == TRUE){
-        header("Location: index.php");
+        header("Location: dashboard.php");
     }
 
     if(isset($_POST["name"]) && isset($_POST["password"])){

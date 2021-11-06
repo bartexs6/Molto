@@ -126,6 +126,12 @@ class Announcement{
         $usedId = array();
 
         for ($i=0; $i < $amount; $i++) { 
+
+            if($amount > $limit){
+                echo "Wystąpił błąd. Nie można pobrać ogłoszeń.";
+                exit();
+            }
+
             $randomId = rand(1, $limit);
 
             if(in_array($randomId, $usedId)){
@@ -134,7 +140,12 @@ class Announcement{
             }
 
             array_push($usedId, $randomId);
-            array_push($list, Announcement::getById($randomId));
+            try {
+                array_push($list, Announcement::getById($randomId));
+            } catch (Exception $e) {
+                echo "Wystąpił błąd. Nie można pobrać ogłoszeń.";
+                exit();
+            }
         }
         
         if(count($list) == 1){

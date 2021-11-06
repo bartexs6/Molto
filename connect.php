@@ -24,13 +24,14 @@ class DatabaseConnect{
             if(mysqli_connect_errno()){
                 throw new exception("Database connect error");
             }
+            mysqli_query($db, "SET NAMES 'utf8'");
             return $db;
         }
         catch(Exception $e)
         {
             show_error("Nie można połączyć się z bazą danych");
-            exit();
             //echo $e->getMessage();
+            exit();
         }
     }
 }

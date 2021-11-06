@@ -12,7 +12,7 @@ class Page{
         <div class="navigation">
             <ul>
                 <li><a href="index.php">Główna</a></li>
-                <li><a href="addAnnForm.php">Dodaj ogłoszenie</a></li>
+                <li><a href="dashboard.php">Dodaj ogłoszenie</a></li>
                 <li><a href="login.php">Konto</a></li> 
             </ul>
         </div>

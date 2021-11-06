@@ -112,7 +112,7 @@ User::login("ada", "test");
 
 
     $a = Announcement::getRandom(8);
-for ($i=0; $i < 8; $i++) { 
+for ($i=0; $i < count($a); $i++) { 
     echo '<div class="randomAnn" onclick="openAnn('.$a[$i]->id.')">';
     echo '<img src="ann_img/'.$a[$i]->img_link.'">';
     echo '<h3>'.$a[$i]->title.'</h3>';
