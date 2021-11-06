@@ -177,6 +177,18 @@ main{
 }
 
 
+main .random{
+    width: 80%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main .random {}
+
 /*  FOOTER SECTION */  
 footer{
     margin: 0;
@@ -276,6 +288,7 @@ footer{
 }
 .randomAnn img {
     width: 90%;
+    max-height: 50%;
 }
 
 .randomAnn h3{
