@@ -111,13 +111,14 @@ User::login("ada", "test");
 //Announcement::addAnnouncement("motoryzacja","asdsad","csotam",122,"/brak.png", "asfdfds", "vbvbvb", date("Y-m-d H:i:s"), 1);
 
 
-    $a = Announcement::getRandom(6);
-for ($i=0; $i < 6; $i++) { 
+    $a = Announcement::getRandom(8);
+for ($i=0; $i < 8; $i++) { 
     echo '<div class="randomAnn" onclick="openAnn('.$a[$i]->id.')">';
     echo '<img src="ann_img/'.$a[$i]->img_link.'">';
     echo '<h3>'.$a[$i]->title.'</h3>';
     echo '<p>'.$a[$i]->date.'</p>';
     echo '<p>'.$a[$i]->value.' zł</p>';
+    echo '<p><ion-icon name="heart-outline"></ion-icon></p>';
     echo '</div>';
 }
 
@@ -154,5 +155,8 @@ Page::generateFooter();
 
 
 </body>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </html>
