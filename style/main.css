@@ -187,9 +187,21 @@ main .random{
     margin-right: auto;
 }
 
-main .random {}
+.heart_btn {
+    padding: 10px 14px;
+    background: #ffffff;
+    margin: auto;
+    font-size: 12px;
+    border-radius: 5px;
+    color: #ff0000;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+  
 
-/*  FOOTER SECTION */  
+
+/* FOOTER SECTION */  
 footer{
     margin: 0;
     padding: 0;
@@ -273,7 +285,7 @@ footer{
     margin: 2%;
     padding: 1%;
     width: 12vw;
-    height: 36vh;
+    height: 38vh;
     border-radius: 0px 20px 0px 20px;
     box-shadow: inset 2px 2px 5px rgba(0,0,0,0.13),
     inset -2px -2px 5px rgba(255,255,255,0.13),
