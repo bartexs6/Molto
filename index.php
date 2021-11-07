@@ -113,12 +113,12 @@ User::login("ada", "test");
 
     $a = Announcement::getRandom(8);
 for ($i=0; $i < count($a); $i++) { 
-    echo '<div class="randomAnn" onclick="openAnn('.$a[$i]->id.')">';
-    echo '<img src="ann_img/'.$a[$i]->img_link.'">';
-    echo '<h3>'.$a[$i]->title.'</h3>';
+    echo '<div class="randomAnn">';
+    echo '<img src="ann_img/'.$a[$i]->img_link.'" onclick="openAnn('.$a[$i]->id.')">';
+    echo '<h3  onclick="openAnn('.$a[$i]->id.')">'.$a[$i]->title.'</h3>';
     echo '<p>'.$a[$i]->date.'</p>';
     echo '<p>'.$a[$i]->value.' zł</p>';
-    echo '<p><ion-icon name="heart-outline"></ion-icon></p>';
+    echo '<button class="heart_btn" onclick="addToFav(this)"><span id="icon"><i class="far fa-heart"></i></span></button>';
     echo '</div>';
 }
 
@@ -158,5 +158,37 @@ Page::generateFooter();
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+
+let clicked = false;
+function addToFav(heartIcon){
+    if (!clicked) {
+        clicked = true;
+        heartIcon.innerHTML = `<i class="fas fa-heart"></i>`;
+    } else {
+        clicked = false;
+        heartIcon.innerHTML = `<i class="far fa-heart"></i>`;
+    }
+}
+
+
+
+/*8
+    const likeBtn = document.getElementsByClassName(".heart_btn");
+    let heartIcon = document.querySelector("#icon");
+
+    let clicked = false;
+
+    likeBtn.addEventListener("click", () => {
+    if (!clicked) {
+        clicked = true;
+        heartIcon.innerHTML = `<i class="fas fa-heart"></i>`;
+    } else {
+        clicked = false;
+        heartIcon.innerHTML = `<i class="far fa-heart"></i>`;
+    }
+    });
+    */
+</script>
 
 </html>

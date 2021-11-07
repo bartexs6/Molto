@@ -25,8 +25,8 @@
                 </li>
                 <li>
                     <a href="#">
-                        <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
-                        <span class="title">Ustawienia</span>
+                        <span class="icon"><ion-icon name="heart-outline"></ion-icon></span>
+                        <span class="title">Ulubione</span>
                     </a>
                 </li>
                 <li>
@@ -62,6 +62,7 @@
                     ?>
                 </div>
             <!--POMOC-->
+            
         </div>
 
     </div>
