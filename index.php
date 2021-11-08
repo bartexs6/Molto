@@ -171,24 +171,6 @@ function addToFav(heartIcon){
     }
 }
 
-
-
-/*8
-    const likeBtn = document.getElementsByClassName(".heart_btn");
-    let heartIcon = document.querySelector("#icon");
-
-    let clicked = false;
-
-    likeBtn.addEventListener("click", () => {
-    if (!clicked) {
-        clicked = true;
-        heartIcon.innerHTML = `<i class="fas fa-heart"></i>`;
-    } else {
-        clicked = false;
-        heartIcon.innerHTML = `<i class="far fa-heart"></i>`;
-    }
-    });
-    */
 </script>
 
 </html>
