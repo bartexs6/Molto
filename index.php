@@ -41,42 +41,42 @@
             <div class="topic">Kategorie</div>
             <div class="ctg">
                 <div class="c1">
-                    <a href="#">
+                    <a href="category.php?category=motoryzacja">
                         <img src="vizualization/moto.png" alt="moto" width="100" height="100">
                         <p>Motoryzacja</p>
                     </a>
                 </div>
                 
                 <div class="c2">
-                    <a href="#">
+                    <a href="category.php?category=nieruchomosci">
                         <img src="vizualization/nieruchmosc.png" alt="nieruchmosc" width="100" height="100">
-                        <p>Motoryzacja</p>
+                        <p>Nieruchomosci</p>
                     </a>
                 </div>
 
                 <div class="c3">
-                    <a href="#">
+                    <a href="category.php?category=elektronika">
                         <img src="vizualization/phone.png" alt="phone" width="100" height="100">
                         <p>Elektronika</p>
                     </a>
                 </div>
 
                 <div class="c4">
-                <a href="#">
+                <a href="category.php?category=rozrywka">
                         <img src="vizualization/piła.png" alt="pila" width="100" height="100">
-                        <p>Hobby</p>
+                        <p>Rozrywka</p>
                     </a>
                 </div>
 
                 <div class="c5">
-                <a href="#">
+                <a href="category.php?category=dom">
                         <img src="vizualization/domogrod.png" alt="domogrod" width="100" height="100">
                         <p>Dom i ogród</p>
                     </a>
                 </div>
 
                 <div class="c6">
-                <a href="#">
+                <a href="category.php?category=ubrania">
                         <img src="vizualization/ubrania.png" alt="ubrania" width="100" height="100">
                         <p>Ubrania</p>
                     </a>
