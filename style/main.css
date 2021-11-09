@@ -17,6 +17,7 @@ nav{
     width: 100%;
     padding: 8px;
     height: 7vh;
+    z-index: 1;
 }
 
 nav .logo {
@@ -298,10 +299,6 @@ footer{
     font-family: "Prompt", sans-serif;
     font-weight: 100;
 }
-.randomAnn img {
-    width: 90%;
-    max-height: 50%;
-}
 
 .randomAnn h3{
     font-family: "Prompt", sans-serif;
@@ -318,4 +315,51 @@ footer{
     border-bottom: 4px solid #654796;
     padding: 1px;
     border-radius: 10px;
+    width: 90%;
+    max-height: 50%;
 }
+
+
+/*STRONA KATEGORII*/
+.randomAnnCategory {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 1px solid #282828;
+    border-radius: 20px;
+    width: 70%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    padding: 1.4%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.randomAnnCategory img{
+    border-left: 4px solid #654796;
+    border-bottom: 4px solid #654796;
+    padding: 1px;
+    border-radius: 10px;
+    max-width: 25%;
+    max-height: 10%;
+    cursor: pointer;
+}
+
+.randomAnnCategory h3 {
+    cursor: pointer;
+}
+
+.randomAnnCategory p {
+    font-size: 120%;
+}
+
+
+
+
+
+
