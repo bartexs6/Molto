@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 <?php
         include_once("page.php");
         Page::generateHeader();
@@ -21,15 +22,31 @@ if(isset($_GET["category"]) && !empty($_GET["category"])){
         $a = Announcement::getByCategory($category);
 
         for ($i=0; $i < count($a); $i++) { 
-            echo '<div class="randomAnn" onclick="openAnn('.$a[$i]->id.')">';
-            echo '<img src="ann_img/'.$a[$i]->img_link.'">';
-            echo '<h3>'.$a[$i]->title.'</h3>';
+            echo '<div class="randomAnnCategory">';
+            echo '<img src="ann_img/'.$a[$i]->img_link.'" onclick="openAnn('.$a[$i]->id.')">';
+            echo '<h3 onclick="openAnn('.$a[$i]->id.')">'.$a[$i]->title.'</h3>';
             echo '<p>'.$a[$i]->date.'</p>';
             echo '<p>'.$a[$i]->value.' zł</p>';
-            echo '<p><ion-icon name="heart-outline"></ion-icon></p>';
+            echo '<p><button class="heart_btn" onclick="addToFav(this)"><span id="icon"><i class="far fa-heart"></i></span></button></p>';
             echo '</div>';
         }
     }
 }
 
 ?>
+
+
+<script>
+
+let clicked = false;
+function addToFav(heartIcon){
+    if (!clicked) {
+        clicked = true;
+        heartIcon.innerHTML = `<i class="fas fa-heart"></i>`;
+    } else {
+        clicked = false;
+        heartIcon.innerHTML = `<i class="far fa-heart"></i>`;
+    }
+}
+
+</script>
