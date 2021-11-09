@@ -155,6 +155,46 @@ class Announcement{
         }
     }
 
+        // Pobieranie ogloszen poprzez kategorie
+        public static function getByCategory(string $category){
+            $conn = DatabaseConnect::connect();
+
+            $limit = mysqli_prepare($conn, "SELECT COUNT(*) FROM announcement WHERE category=?");
+            mysqli_stmt_bind_param($limit, "s", $category);
+            mysqli_stmt_execute($limit);
+
+            $getResult = mysqli_stmt_get_result($limit);
+
+            $limit = mysqli_fetch_row($getResult)[0];
+
+            $cmd = mysqli_prepare($conn, "SELECT id FROM announcement WHERE category=?");
+    
+            mysqli_stmt_bind_param($cmd, "s", $category);
+            mysqli_stmt_execute($cmd);
+    
+            $getResult = mysqli_stmt_get_result($cmd);
+
+            $annId = array();
+            while($row = mysqli_fetch_row($getResult))
+            {
+                array_push($annId, $row[0]);
+            }
+    
+            mysqli_close($conn);
+            $list = array();
+    
+            foreach ($annId as $ann) {
+                $announcement = Announcement::getById($ann);
+                array_push($list, $announcement);
+            }
+
+            if(isset($list) && isset($list) != 0){
+                return $list;
+            }else{
+                throw new Exception("Cannot find announcement", 1);
+            }
+        }
+
     // Pobieranie nazwy uzytkownika po id ogloszenia
     public static function getUserById(int $id){
         $conn = DatabaseConnect::connect();
