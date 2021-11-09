@@ -40,10 +40,11 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == TRUE){
         <input type="text" name="title" placeholder="tytuł" maxlength="20" required><br>
         <textarea name="description" placeholder="opis" rows="5" cols="40" maxlength="512"></textarea><br>
         <input type="number" name="value" placeholder="cena" min=0 max=9999999 required><br>
-        <input type="file" name="img_link[]" accept=".jpg, .jpeg, .png" multiple><h4>Maksymalnie 3 zdjęcia</h4><br>
+        <label for="file">Wybierz zdjęcia (maks 3)</label>
+        <input type="file" id="file" name="img_link[]" accept=".jpg, .jpeg, .png" multiple hidden><br>
         <input type="tel" name="phone" placeholder="numer tel. (xxx-xxx-xxx)" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required><br>
         <input type="text" name="location" placeholder="lokacja" maxlength="64" required><br>
-        <input type="submit" name="submit" value="Dodaj!">
+        <input type="submit" name="submit" value="Dodaj">
     </form>
 
 </body>
