@@ -23,14 +23,14 @@
         
         <!--SEKCJA WYSZUKIWANIA PRZEDMIOTU--> 
         <div class="search">
-            <form action="search.php"></form>
+            <form action="search.php" method="POST">
 
                 <div class="input">
-                    <input type="text" placeholder="Szukaj" id="input_search">
+                    <input type="text" placeholder="Szukaj" id="input_search" name="search_field">
                 </div>
                 
                 <div class="logo_search">
-                    <button type="submit"><i class="fa fa-search"></i></button>
+                    <button type="submit" values="submit_search"><i class="fa fa-search"></i></button>
                 </div>
                 
             </form>
