@@ -27,7 +27,7 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == TRUE){
 
     <form action="addAnn.php" method="POST" enctype="multipart/form-data">        
         <!-- LISTA KATEGORII-->
-        <select name="category" required>
+        <select id="category" name="category" required>
             <option selected disabled>Wybierz kategorie</option>
             <option value="Motoryzacja">Motoryzacja</option>
             <option value="Elektronika">Elektronika</option>
@@ -44,8 +44,16 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == TRUE){
         <input type="file" id="file" name="img_link[]" accept=".jpg, .jpeg, .png" multiple hidden><br>
         <input type="tel" name="phone" placeholder="numer tel. (xxx-xxx-xxx)" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required><br>
         <input type="text" name="location" placeholder="lokacja" maxlength="64" required><br>
-        <input type="submit" name="submit" value="Dodaj">
+        <input type="submit" name="submit" onClick="checkCategory()" value="Dodaj">
     </form>
 
+    <script>
+    function checkCategory() {
+        if (document.getElementById('category').value == "Wybierz kategorie") {
+            alert("Nie wybrano wszystkich opcji");
+            document.getElementById('category').style = "background-color: red";
+        }
+    }
+    </script>
 </body>
 </html>

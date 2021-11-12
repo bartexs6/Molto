@@ -30,9 +30,9 @@ for ($i=0; $i < count($_FILES['img_link']['name']); $i++) {
 
     $user_owner = $_SESSION['id'];
 
-    print_r($_FILES['img_link']['name']);
-
     Announcement::addAnnouncement($category, $title, $description, $value, $img_list[0], $contact, $location, $date, $user_owner, $img_list);
+
+    header("Location: index.php");
 
 }
 

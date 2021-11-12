@@ -31,7 +31,7 @@
                 </div>
                 
                 <div class="logo_search">
-                    <button type="submit" values="submit_search"><i class="fa fa-search"></i></button>
+                    <button type="submit" name="submit_search"><i class="fa fa-search"></i></button>
                 </div>
                 
             </form>
