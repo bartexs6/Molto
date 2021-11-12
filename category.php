@@ -1,4 +1,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<link rel="stylesheet" href="style/category.css">
+<link rel="stylesheet" href="style/main.css">
+
+
 <?php
         include_once("page.php");
         Page::generateHeader();
@@ -22,8 +26,8 @@ if(isset($_GET["category"]) && !empty($_GET["category"])){
         $a = Announcement::getByCategory($category);
 
         for ($i=0; $i < count($a); $i++) { 
-            echo '<div class="randomAnnCategory">';
-            echo '<img src="ann_img/'.$a[$i]->img_link.'" onclick="openAnn('.$a[$i]->id.')">';
+            echo '<div class="randomAnnCategory" onclick="openAnn('.$a[$i]->id.')">';
+            echo '<img src="ann_img/'.$a[$i]->img_link.'">';
             echo '<h3 onclick="openAnn('.$a[$i]->id.')">'.$a[$i]->title.'</h3>';
             echo '<p>'.$a[$i]->date.'</p>';
             echo '<p>'.$a[$i]->value.' zł</p>';
@@ -50,3 +54,7 @@ function addToFav(heartIcon){
 }
 
 </script>
+
+<?php
+        Page::generateFooter();
+?>
