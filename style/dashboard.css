@@ -39,26 +39,31 @@
     width: 95%;
 }
 
-.container .navigation ul li a {
+.container .navigation ul li button {
     text-decoration: none;
-    position: relative;
     display: block;
     padding: 2vh;
-    width: 100%;
+    width: 110%;
     color: #fff;
     font-size: 180%;
     justify-content: center;
+    border: none;
+    background-color: #282828;
 }
 
-.container .navigation ul li a:hover{
+.container .navigation ul li button:hover{
     background-color: #fff;
     color: #282828;
+    width: 120%;
     border-radius: 50px 0px 0px 50px;
+    cursor: pointer;
 }
+
+
 
 
 /*STYLE DO SEKCJI GŁOWNEJ DASHBOARDA (OGŁOSZENIA)*/
-.dasOption{
+.content{
     display: flex;
     justify-content: space-evenly;
     margin: 1%;
@@ -75,16 +80,30 @@
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
-.announcements{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.tab-content{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    width:90%;
+    height:80vh;
+    position:absolute;
+    top:7rem;
+    display: none;
 }
 
-.announcements form{
+.tab-content-active{
+    display:flex;
+}
+
+.content form{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-direction: column;
+    height: 80%;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 form select {
@@ -93,7 +112,7 @@ form select {
     -ms-appearance:none;
     appearance:none;
     box-shadow:none;
-    background: red;
+    background: #282828;
     opacity: 80%;
     background-image: none;
     padding: .3em;
