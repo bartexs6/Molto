@@ -56,4 +56,8 @@ function addToFav(heartIcon){
     }
 }
 
+function openAnn(id){
+        location.assign("ann.php?id=" + id);
+    }
+
 </script>
