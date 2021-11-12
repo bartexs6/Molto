@@ -8,7 +8,7 @@ body{
 
 /*SEKJCA WYSZUKIWANIA*/
 .search{
-    margin-top: 8%;
+    margin-top: 6%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -232,6 +232,7 @@ main .random{
 .randomAnnCategory p {
     font-size: 120%;
 }
+
 
 
 

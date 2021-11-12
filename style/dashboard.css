@@ -23,38 +23,24 @@
     width: 15%;
     height: 100vh;
 }
-.container .navigation ul{
-    height: 80%;
-    justify-content: space-evenly;
-    justify-content: center;
-}
 
-.container .navigation ul{
-    list-style-type: none;
+.container .navigation button {
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-.container .navigation ul li{
-    width: 95%;
-}
-
-.container .navigation ul li button {
-    text-decoration: none;
-    display: block;
+    margin-left: 2%;
     padding: 2vh;
-    width: 110%;
+    width: 80%;
     color: #fff;
-    font-size: 180%;
+    font-size: 170%;
     justify-content: center;
+    align-items: center;
     border: none;
     background-color: #282828;
 }
 
-.container .navigation ul li button:hover{
+.container .navigation button:hover{
     background-color: #fff;
     color: #282828;
-    width: 120%;
+    width: 100%;
     border-radius: 50px 0px 0px 50px;
     cursor: pointer;
 }
