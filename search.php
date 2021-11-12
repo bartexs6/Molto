@@ -13,6 +13,7 @@
     include_once("connect.php");
     include_once("announcement.php");
 
+    echo '<div class="mainCat" style="min-height: calc(100% - 20vh);">';
     if(isset($_POST['submit_search'])){
         $conn = DatabaseConnect::connect();
         $search = mysqli_real_escape_string($conn, $_POST['search_field']);
@@ -35,7 +36,11 @@
             echo 'Przepraszamay ale szukana przez ciebie fraza nie wskazuje na żadne ogłoszenie z bazy.';
         }
     }
+    echo '</div>';
     
+    Page::generateFooter();
+
+
 ?>
 
 <script>
