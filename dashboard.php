@@ -10,44 +10,36 @@
 <body>
     <div class="container">
         <div class="navigation">  
-            <ul>
-                <li>
-                    <button class="tab-btn" data-for-tab="1">
-                        <span class="icon"><ion-icon name="menu-outline"></ion-icon></span>
-                        <span class="title">Menu</span>
-                    </button>
-                </li>
-                <li>
-                    <button class="tab-btn" data-for-tab="2">
-                        <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
-                        <span class="title">Konto</span>
-                    </button>
-                </li>
-                <li>
-                    <button class="tab-btn" data-for-tab="3">
-                        <span class="icon"><ion-icon name="heart-outline"></ion-icon></span>
-                        <span class="title">Ulubione</span>
-                    </button>
-                </li>
-                <li>
-                    <button class="tab-btn tab-btn-active" data-for-tab="4">
-                        <span class="icon"><ion-icon name="cart-outline"></ion-icon></span>
-                        <span class="title">Ogłoszenia</span>
-                    </button>
-                </li>
-                <li>
-                    <button class="tab-btn" data-for-tab="5">
-                        <span class="icon"><ion-icon name="help-outline"></ion-icon></span>
-                        <span class="title">Pomoc</span>
-                    </button>
-                </li>
-                <li>
-                    <button class="tab-btn" data-for-tab="6">
-                        <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
-                        <span class="title">Wyloguj się</span>
-                    </button>
-                </li>
-            </ul>
+            <button class="tab-btn" data-for-tab="1">
+                <span class="icon"><ion-icon name="menu-outline"></ion-icon></span>
+                <span class="title">Menu</span>
+            </button>
+                
+            <button class="tab-btn" data-for-tab="2">
+                <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                <span class="title">Konto</span>
+            </button>
+                
+            <button class="tab-btn" data-for-tab="3">
+                <span class="icon"><ion-icon name="heart-outline"></ion-icon></span>
+                <span class="title">Ulubione</span>
+            </button>
+                
+            <button class="tab-btn tab-btn-active" data-for-tab="4">
+                <span class="icon"><ion-icon name="cart-outline"></ion-icon></span>
+                <span class="title">Ogłoszenia</span>
+            </button>
+              
+            <button class="tab-btn" data-for-tab="5">
+                <span class="icon"><ion-icon name="help-outline"></ion-icon></span>
+                <span class="title">Pomoc</span>
+            </button>
+               
+            <button class="tab-btn" data-for-tab="6">
+                <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                <span class="title">Wyloguj się</span>
+            </button>
+             
         </div>
 
         <div class="content">
@@ -85,10 +77,30 @@
 
     <script>
         //AKTYWNE OKNA DASHBOARD'U
-        function setupTabs (){
-        
+            function changeTabs (){
+                document.querySelectorAll('.tab-btn').forEach(button=>{
+                    button.addEventListener('click',()=>{  
+                        
+                    const navigation = button.parentElement;
+                    const container = navigation.parentElement;
+                    const tabNumber = button.dataset.forTab;
+                    const tabActivate = container.querySelector(`.tab-content[data-tab="${tabNumber}"]`)
+                        
+                    navigation.querySelectorAll('.tab-btn').forEach(button=>{
+                        button.classList.remove('tab-btn-active')
+                    })
+                    container.querySelectorAll('.tab-content').forEach(tab=>{
+                        tab.classList.remove('tab-content-active')
+                    })
+                    button.classList.add('tab-btn-active')
+                        tabActivate.classList.add('tab-content-active')
+                    })
+                })
+            }
 
-        }
+        document.addEventListener('DOMContentLoaded',()=>{
+        changeTabs();
+        })
     </script>
 
 </body>
