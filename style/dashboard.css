@@ -93,7 +93,7 @@ form select {
     -ms-appearance:none;
     appearance:none;
     box-shadow:none;
-    background: #282828;
+    background: red;
     opacity: 80%;
     background-image: none;
     padding: .3em;
