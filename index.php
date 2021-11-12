@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Molto</title>
-    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/main.css" MEDIA="(min-width: 1250px)">
+    <link rel="stylesheet" href="style/indexphone.css" MEDIA="(max-width: 1249px)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 </head>
 

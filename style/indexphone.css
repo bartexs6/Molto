@@ -5,9 +5,9 @@ body{
     margin: 0;
 }
 
-
 /*SEKJCA WYSZUKIWANIA*/
 .search{
+    display: none !important;
     margin-top: 8%;
     display: flex;
     justify-content: center;
@@ -69,6 +69,7 @@ body{
 /*SKEJCA GŁOWNA*/
 main{
     background-color: #f1f1f1;
+    margin-top: 7vh;
 }
 
 .random{
@@ -85,8 +86,8 @@ main{
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-    width: 60%;
-    height: 28vh;
+    width: 90%;
+    height:60vh;
     padding: 5px;
     background-color: #675682;
     border-radius: 0px 20px 0px 20px;
@@ -95,10 +96,15 @@ main{
 .ctg{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .ctg div{
-    padding: 30px;
+    max-width: 20%;
+    padding: 10px;
+    
 }
 
 .categories .topic{
@@ -114,6 +120,9 @@ main{
     text-decoration: none;
     color: white;
     display: flex;
+    font-size: 60%;
+    
+    text-align: center;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -125,11 +134,15 @@ main{
     font-size: 120%;
 }
 
+.categories a img{
+    width: 50%;
+    height: 50%;
+}
 
 main .random{
     width: 80%;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     justify-content: center;
     align-items: center;
     margin-left: auto;
@@ -148,6 +161,7 @@ main .random{
     cursor: pointer;
 }
 
+
 /*KALISZA STYLE*/
 .randomAnn {
     cursor: pointer;
@@ -160,8 +174,7 @@ main .random{
     background-color: white;
     margin: 2%;
     padding: 1%;
-    width: 12vw;
-    height: 38vh;
+    width: 80%;
     border-radius: 0px 20px 0px 20px;
     box-shadow: inset 2px 2px 5px rgba(0,0,0,0.13),
     inset -2px -2px 5px rgba(255,255,255,0.13),

@@ -148,6 +148,7 @@ a{
     object-fit: cover;
     object-position: 100% 0;
     width: 80%;
+    max-height: 20%;
     box-shadow: 2px 2px 5px gray;
 }
 .mainImg{

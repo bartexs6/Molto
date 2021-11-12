@@ -3,10 +3,10 @@
 class Page{
 
     public static function generateHeader(){
-        echo '<link rel="stylesheet" href="style/main.css">';
+        echo '<link rel="stylesheet" href="style/page.css">';
         echo '<nav>
         <div class="logo">
-            <img src="vizualization/mol.png" alt="logo" width="160" height="50">
+            <img src="style/LOGO.png" alt="logo" width="160" >
         </div>
         
         <div class="navigation">
