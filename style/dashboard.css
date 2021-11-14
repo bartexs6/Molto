@@ -166,6 +166,30 @@ textarea {
     font-size: 100%;
 }
 
+.logreg{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 90%;
+    width: 90%;
+}
+
+.logreg input {
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid rgba(grey, 0.5);
+    font-size: 13px;
+    font-weight: 300;
+    color: #797A9E;
+    letter-spacing: 0.11em;
+}
+
+.logreg,.register input{
+    
+}
+    
+
+
 
 
 
