@@ -47,11 +47,32 @@
             <div class="tab-content" data-tab="1">1
             </div>
             <!--KOTNO-->
-            <div class="tab-content" data-tab="2">2
+            <div class="tab-content" data-tab="2">
+                <div class="logreg">
+                    <div class="login">
+                        <form action="" method="POST">
+                            <input type="email" name="login_email" placeholder="email" required>
+                            <input type="password" name="login_password" placeholder="hasło" required>
+                            <button type="submit" name="login_submit">Zaloguj się</button>
+                        </form>
+                    </div>
+
+                    <div class="register">
+                        <form action="" method="POST">
+                            <input type="text" name="reg_imie" pattern="[A-Za-z]{2,}" placeholder="imie" required>
+                            <input type="text" name="reg_naziwsko" pattern="[A-Za-z]{2,}" placeholder="nazwisko" required>
+                            <input type="tel" name="reg_phone" placeholder="numer tel. (xxx-xxx-xxx)" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required>
+                            <input type="email" name="reg_email" placeholder="email"required>
+                            <input type="password" name="reg_password" placeholder="hasło" required>
+                            <button type="submit" name="reg_submit">Zarejestruj się</button>
+                        </form>
+                    </div>
+                </div>
             </div>
 
             <!--ULUBIONE-->
-            <div class="tab-content" data-tab="3">3
+            <div class="tab-content" data-tab="3">
+                <p><h3>Aktualnie trwają prace nad tą sekcją</h3></p>
             </div>
     
             <!--OGŁOSZENIA-->
@@ -61,7 +82,8 @@
                     ?>
                 </div>
             <!--POMOC-->
-            <div class="tab-content" data-tab="5">5
+            <div class="tab-content" data-tab="5">
+                <p><h3>Aktualnie trwają prace nad tą sekcją</h3></p>
             </div>
     
             <!--wYLOGUJ SIĘ-->
