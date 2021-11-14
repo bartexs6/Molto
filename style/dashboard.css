@@ -92,6 +92,7 @@
     margin-bottom: auto;
 }
 
+
 form select {
     -webkit-appearance:none;
     -moz-appearance:none;
@@ -166,6 +167,8 @@ textarea {
     font-size: 100%;
 }
 
+/*KONTO*/
+
 .logreg{
     display: flex;
     flex-direction: row;
@@ -174,20 +177,76 @@ textarea {
     width: 90%;
 }
 
-.logreg input {
-    width: 90%;
-    border: 0;
-    border-bottom: 1px solid rgba(grey, 0.5);
-    font-size: 13px;
-    font-weight: 300;
-    color: #797A9E;
-    letter-spacing: 0.11em;
+.logreg .login input{
+    border: none;
+    border-bottom: 1px solid #282828;
+    box-shadow: none;
+    font-weight: 500;
+    height: 7vh;
+    margin: 5%;
+    font-size: medium;
+    opacity: 0.6;
 }
 
-.logreg,.register input{
-    
+.logreg .register input{
+    border: none;
+    border-bottom: 1px solid #282828;
+    box-shadow: none;
+    font-weight: 500;
+    height: 7vh;
+    margin: 5%;
+    font-size: medium;
+    opacity: 0.8;
 }
-    
+
+.logreg input:focus{
+    outline: none;
+    color: #282828;
+    opacity: 1;
+}
+
+
+
+.logreg button {
+    background-image: linear-gradient(to right, #614385 0%, #516395  51%, #614385  100%)
+}
+
+.logreg button {
+    border: none;
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    border-radius: 10px;
+    display: block;
+}
+
+.logreg button:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+.logreg .line{
+    margin-top: auto;
+    margin-bottom: auto;
+    top: 80px;
+    height: 80%;
+    width: 0.1%;
+    background-color: #ccc;
+}
+
+.logo {
+    position: absolute;
+    top: -90px;
+}
+
+
+
+
 
 
 

@@ -13,7 +13,7 @@ class Page{
             <ul>
                 <li><a href="index.php">Główna</a></li>
                 <li><a href="dashboard.php">Dodaj ogłoszenie</a></li>
-                <li><a href="login.php">Konto</a></li> 
+                <li><a href="dashboard.php">Konto</a></li> 
             </ul>
         </div>
     

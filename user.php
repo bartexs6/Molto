@@ -9,12 +9,13 @@ class User{
 
     private $id;
     private $password;
+    private $phone_number;
     public $username;
     public $email;
 
     // Dodawanie uzytkownika
-    public static function addUser($username, $password, $email){
-        if(empty($username) || empty($password) || empty($email)){
+    public static function addUser($username, $password, $email,$phone_number){
+        if(empty($username) || empty($password) || empty($email) || empty($phone_number)){
             throw new Exception("Empty username, password or email", 1);
         }
 
@@ -29,7 +30,6 @@ class User{
         
                 $password = md5($password);
         
-                $phone_number = "123-123-123";
                 mysqli_stmt_bind_param($cmd, "ssss", $username, $password, $email, $phone_number);
                 mysqli_stmt_execute($cmd);
         
@@ -150,6 +150,10 @@ class User{
         }else{
             return false;
         }
+    }
+
+    public static function logout(){
+        session_destroy();
     }
 }
 ?>

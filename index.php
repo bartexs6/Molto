@@ -97,7 +97,6 @@ include_once("error.php");
 
 echo '<link href="style/styl.css" rel="stylesheet">';
 
-User::login("ada", "test");
 /*if(isset($_SESSION['logged']) && $_SESSION['logged'] == TRUE){
     echo "Witaj " . $_SESSION['username'];
 
