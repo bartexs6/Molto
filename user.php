@@ -155,5 +155,25 @@ class User{
     public static function logout(){
         session_destroy();
     }
+
+    
+    public static function userId($username){
+        $conn = DatabaseConnect::connect();
+        $cmd = mysqli_prepare($conn, "SELECT id FROM user WHERE username=?");
+
+        mysqli_stmt_bind_param($cmd, "s", $username);
+        mysqli_stmt_execute($cmd);
+
+        $getResult = mysqli_stmt_get_result($cmd);
+ 
+        $row = mysqli_fetch_row($getResult);
+        mysqli_close($conn);
+
+        if(isset($row[0])){
+            return $row[0];
+        }else{
+            return 1;
+        }
+    }
 }
 ?>
