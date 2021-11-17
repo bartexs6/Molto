@@ -89,8 +89,10 @@
             </div>
 
             <!--ULUBIONE-->
-            <div class="tab-content" data-tab="2">2
-
+            <div class="tab-content" data-tab="2">
+                <p>
+                <h3>Aktualnie trwają prace nad tą sekcją</h3>
+                </p>
             </div>
 
             <!--OGŁOSZENIA-->
@@ -102,9 +104,9 @@
 
             <!--TWOJE-->
             <div class="tab-content" data-tab="4">
-                <p>
-                <h3>Aktualnie trwają prace nad tą sekcją</h3>
-                </p>
+                <?php
+                include_once 'editAnn.php';
+                ?>
             </div>
 
             <!--WYLOGUJ SIĘ-->
