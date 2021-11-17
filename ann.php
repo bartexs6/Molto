@@ -35,8 +35,8 @@ if(!isset($_GET["id"]) || !is_numeric($_GET["id"]) || $_GET["id"] <= 0){
         $announcement = Announcement::getById($_GET["id"]);
 
         echo '<div class="annNavBack">';
-        echo '<p>< Wroc</p>';
-        echo '<p><a href="index.php">Strona główna</a> / '.$announcement->category.' / '.htmlspecialchars($announcement->title).'</p>';
+        echo '<p><a href="index.php">< Wroc</a></p>';
+        echo '<p><a href="index.php">Strona główna</a> / <a href="category.php?category='.$announcement->category.'">'.$announcement->category.'</a> / '.htmlspecialchars($announcement->title).'</p>';
         echo '</div>';
         echo '<div class="middleContent">';
         echo '<div class="leftBlock">';

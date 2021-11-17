@@ -113,12 +113,18 @@ echo '<link href="style/styl.css" rel="stylesheet">';
 
     $a = Announcement::getRandom(8);
 for ($i=0; $i < count($a); $i++) { 
-    echo '<div class="randomAnn">';
-    echo '<img src="ann_img/'.$a[$i]->img_link.'" onclick="openAnn('.$a[$i]->id.')">';
-    echo '<h3  onclick="openAnn('.$a[$i]->id.')">'.$a[$i]->title.'</h3>';
+    echo '<div class="randomAnn" onclick="openAnn('.$a[$i]->id.')">
+    <div class="annImg">
+    <div class="leftBorder"></div>';
+    echo '<img src="ann_img/'.$a[$i]->img_link.'">
+    <div class="bottomBorder"></div>
+    </div>';
+    echo '<h3  onclick="openAnn('.$a[$i]->id.')">'.$a[$i]->title.'</h3>
+    <div class="annImgInfo">';
     echo '<p>'.$a[$i]->date.'</p>';
-    echo '<p>'.$a[$i]->value.' zł</p>';
-    echo '<button class="heart_btn" onclick="addToFav(this)"><span id="icon"><i class="far fa-heart"></i></span></button>';
+    echo '<p>'.$a[$i]->value.' zł</p>
+    </div>';
+    //echo '<button class="heart_btn" onclick="addToFav(this)"><span id="icon"><i class="far fa-heart"></i></span></button>';
     echo '</div>';
 }
 
