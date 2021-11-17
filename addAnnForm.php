@@ -44,7 +44,7 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == TRUE){
         <input type="number" name="value" placeholder="cena" min=0 max=9999999 required><br>
         <label for="file">Wybierz zdjęcia (maks 3)</label>
         <input type="file" id="file" name="img_link[]" accept=".jpg, .jpeg, .png" multiple hidden><br>
-        <input type="tel" name="phone" placeholder="numer tel. (xxx-xxx-xxx)" value="<?php echo User::takePhoneNumber($_SESSION['username']); ?>" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" disabled required><br>
+        <input type="tel" name="phone" placeholder="numer tel. (xxx-xxx-xxx)" value="<?php echo User::takePhoneNumber($_SESSION['username']); ?>" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" readonly required><br>
         <input type="text" name="location" placeholder="lokacja" maxlength="64" required><br>
         <input type="submit" name="submit" onClick="checkCategory()" value="Dodaj">
     </form>
