@@ -111,7 +111,7 @@ echo '<link href="style/styl.css" rel="stylesheet">';
 //Announcement::addAnnouncement("motoryzacja","asdsad","csotam",122,"/brak.png", "asfdfds", "vbvbvb", date("Y-m-d H:i:s"), 1);
 
 
-    $a = Announcement::getRandom(8);
+    $a = Announcement::getRandom(6);
 for ($i=0; $i < count($a); $i++) { 
     echo '<div class="randomAnn" onclick="openAnn('.$a[$i]->id.')">
     <div class="annImg">
