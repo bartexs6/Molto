@@ -36,6 +36,7 @@
                 
             </form>
         </div>
+
             
         <!--SEKCJA KATEGORII-->
         <section class="categories">

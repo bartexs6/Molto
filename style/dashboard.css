@@ -344,6 +344,35 @@ textarea {
 }
 
 
+.accountContent{
+    display: flex;
+    flex-direction:row;
+    margin: auto;
+    width: 40%;
+    height: 60%;
+}
+.accountContent .leftContent{
+    width: 30%;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+.accountContent .leftContent .icon{
+    font-size: 200px;
+}
+
+.accountContent .leftContent span{
+    font-size: 150%;
+    margin-top: -40%;
+}
+
+.accountContent .rightContent{
+    margin: 6%;
+} 
+
+
 
 
 

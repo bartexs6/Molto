@@ -1,4 +1,5 @@
 <?php
+    ob_start();
     include_once("user.php");
     include_once("connect.php");
     include_once("announcement.php");
@@ -18,17 +19,18 @@
             echo '<p><b>Brak danych do wyświetlenia</b></p>';
         }
 
+        
         echo '<div class="editContent">';        
-            while($row = mysqli_fetch_row($result)){
+        while($row = mysqli_fetch_row($result)){
                 echo '<div class="dashboardEditAnn">';
                 echo '<form action="editAnn.php" method="POST">';
                 echo '<img src=ann_img/'.$row[5].'>';
-                echo '<input type="text" name="titleEdit" value='.$row[2].' required>';
-                echo '<input type="text" name="titleBeforeEdit" value='.$row[2].' hidden>';
-                echo '<input type="text" name="categoryEdit" value='.$row[1].' required>';
+                echo '<input type="text" name="titleEdit" value="'.$row[2].'" required>';
+                echo '<input type="text" name="titleBeforeEdit" value="'.$row[2].'" hidden>';
+                echo '<input type="text" name="categoryEdit" value="'.$row[1].'" required>';
                 echo '<textarea name="descriptionEdit" required>'.$row[3].'</textarea>';
-                echo '<input type="number" name="valueEdit" value='.$row[4].' required>';
-                echo '<input type="tel" name="phoneEdit" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" value='.$row[6].' required>';
+                echo '<input type="number" name="valueEdit" value="'.$row[4].'" required>';
+                echo '<input type="tel" name="phoneEdit" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" value="'.$row[6].'" required>';
                 echo '<button type="submit" name="edit">Edytuj</button>';
                 echo '<button type="submit" name="delete">Usuń</button>';
                 echo '</form>';
@@ -59,18 +61,19 @@
         mysqli_query($conn,$cmd);
 
         mysqli_close($conn);
-
         header("Location: dashboard.php");
 
     } elseif(isset($_POST['delete'])){
         $conn = DatabaseConnect::connect();
         $userId = User::userId($_SESSION['username']);
+        $titleBeforeEdit = $_POST['titleBeforeEdit'];
+        $id = Announcement::getAnnId($userId, $titleBeforeEdit);
+        $userId = User::userId($_SESSION['username']);
 
-        $cmd = "DELETE FROM announcement WHERE user_owner=$userId";
+        $cmd = "DELETE FROM announcement WHERE id=$id";
         mysqli_query($conn,$cmd);
-
-        header("Location: dashboard.php");
         
         mysqli_close($conn);
+        header("Location: dashboard.php");
     }
 ?>
