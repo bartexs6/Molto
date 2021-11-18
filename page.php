@@ -6,7 +6,9 @@ class Page{
         echo '<link rel="stylesheet" href="style/page.css">';
         echo '<nav>
         <div class="logo">
-            <img src="style/LOGO.png" alt="logo" width="160" >
+            <a href="index.php">
+                <img src="style/LOGO.png" alt="logo" width="160" >
+            </a>
         </div>
         
         <div class="navigation">

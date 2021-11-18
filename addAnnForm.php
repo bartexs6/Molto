@@ -35,7 +35,7 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == TRUE){
             <option value="Elektronika">Elektronika</option>
             <option value="Ubrania">Ubrania</option>
             <option value="Dom">Dom</option>
-            <option value="Nieruchomości">Nieruchomości</option>
+            <option value="Nieruchomosci">Nieruchomości</option>
             <option value="Rozrywka">Rozrywka</option>
         </select><br>
 

@@ -2,7 +2,7 @@
 class Announcement{
 
     const MAX_TITLE_LENGTH = 21;
-    const MAX_DESCRIPTION_LENGTH = 513;
+    const MAX_DESCRIPTION_LENGTH = 1025;
     const MAX_IMGLINK_LENGTH = 65;
     const MAX_CONTACT_LENGTH = 65;
     const MAX_LOCATION_LENGTH = 65;
@@ -235,6 +235,26 @@ class Announcement{
         }else{
             throw new Exception("Cannot find announcement", 1);
         }
-    } 
+    }
+    
+    public static function getAnnId(int $user_owner, string $title){
+        $conn = DatabaseConnect::connect();
+        $cmd = mysqli_prepare($conn, "SELECT id FROM announcement WHERE user_owner=? and title=?");
+
+        mysqli_stmt_bind_param($cmd, "is", $user_owner, $title);
+        mysqli_stmt_execute($cmd);
+
+        $getResult = mysqli_stmt_get_result($cmd);
+ 
+        $row = mysqli_fetch_row($getResult);
+
+        mysqli_close($conn);
+
+        if(isset($row)){
+            return $row[0];
+        }else{
+            throw new Exception("Cannot find announcement", 1);
+        }
+    }
 }
 ?>
