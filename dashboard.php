@@ -66,25 +66,51 @@
                 }
                 if(isset($_SESSION['logged']) && $_SESSION['logged'] == TRUE){
                     include_once("user.php");
-                    // echo '<br>Zalogowano jako: ' . $_SESSION['username'] .'';
-                    // echo '<br>Twój ustalony numer telefonu: ' . User::takePhoneNumber($_SESSION['username']) .'';
+                    include_once("connect.php");
+
+                    $conn = DatabaseConnect::connect();
+                    $userId = User::userId($_SESSION['username']);
+                    $cmd = "SELECT * FROM user WHERE id=$userId";
+                    $result = mysqli_query($conn,$cmd);
+                    $row = mysqli_fetch_row($result);
+
                     echo '<div class="accountContent">';
-                    echo '<div class="leftContent">';
-                    echo '<span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>';
-                    echo '<span>'.$_SESSION['username'].'</span>';
-                    echo '</div>';
-                    echo '<div class="rightContent">';
-                    echo '<form action="accountEdit.php" method="POST">';
-                    echo '<label for="nick">nick:</label>';
-                    echo '<input type="text">';
-                    echo '<label for="nick">e-mail:</label>';
-                    echo '<input type="mail">';
-                    echo '<label for="nick">nr. telefonu:</label>';
-                    echo '<input type="tel">';
-                    echo '<label for="nick">hasło:</label>';
-                    echo '<input type="password">';
-                    echo '</form>';
-                    echo '</div>';
+                        //Lewy blok sekcji KONTO
+                        echo '<div class="leftContent">';
+                        echo '<span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>';
+                        echo '<span>'.$_SESSION['username'].'</span>';
+                        echo '</div>';
+                        //Prawy blok sekcji konto
+                        echo '<div class="rightContent">';
+                        echo '<form action="accountEdit.php" method="POST">';
+
+                            echo '<div class="accountInf">';
+                                echo '<label for="nick">nick:</label>';
+                                echo '<input type="text" value="'.$_SESSION['username'].'">';
+                            echo '</div>';
+
+                            echo '<div class="accountInf">';
+                                echo '<label for="email">e-mail:</label>';
+                                echo '<input type="email" value="'.$row[3].'">';
+                            echo '</div>';
+
+                            echo '<div class="accountInf">';
+                                echo '<label for="phone">nr. telefonu:</label>';
+                                echo '<input type="tel" value="'.User::takePhoneNumber($_SESSION['username']).'">';
+                            echo '</div>';
+
+                            echo '<div class="accountInf">';
+                                echo '<label for="password">hasło:</label>';
+                                echo '<input type="password" value="'.$row[2].'">';
+                            echo '</div>';
+
+                        echo '<div class="interractionAcc">';
+                            echo '<button type="submit" name="editAccount">Edytuj konto</button>';
+                            echo '<button type="submit" name="deleteAccount">Usuń konto</button>';
+                        echo '</div>';
+                        
+                        echo '</form>';
+                        echo '</div>';
                     echo '</div>';
 
                 }else{
