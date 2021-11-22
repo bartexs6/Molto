@@ -86,22 +86,22 @@
 
                             echo '<div class="accountInf">';
                                 echo '<label for="nick">nick:</label>';
-                                echo '<input type="text" value="'.$_SESSION['username'].'">';
+                                echo '<input type="text" name="nick" value="'.$_SESSION['username'].'" required>';
                             echo '</div>';
 
                             echo '<div class="accountInf">';
                                 echo '<label for="email">e-mail:</label>';
-                                echo '<input type="email" value="'.$row[3].'">';
+                                echo '<input type="email" name="email" value="'.$row[3].'" required>';
                             echo '</div>';
 
                             echo '<div class="accountInf">';
                                 echo '<label for="phone">nr. telefonu:</label>';
-                                echo '<input type="tel" value="'.User::takePhoneNumber($_SESSION['username']).'">';
+                                echo '<input type="tel" name="phone" value="'.User::takePhoneNumber($_SESSION['username']).'" required>';
                             echo '</div>';
 
                             echo '<div class="accountInf">';
                                 echo '<label for="password">hasło:</label>';
-                                echo '<input type="password" value="'.$row[2].'">';
+                                echo '<input type="password" name="password" value="'.$row[2].'" required>';
                             echo '</div>';
 
                         echo '<div class="interractionAcc">';
@@ -112,7 +112,7 @@
                         echo '</form>';
                         echo '</div>';
                     echo '</div>';
-
+                    mysqli_close($conn);
                 }else{
                     echo '                    <div class="login">
                     <form action="login.php" method="POST">
