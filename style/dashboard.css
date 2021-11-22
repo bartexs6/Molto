@@ -426,7 +426,9 @@ textarea {
     text-transform: uppercase;
 }
 
-
+.accountContent .rightContent form .interractionAcc button:hover{
+    color: red;
+}
 
 
 
