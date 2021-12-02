@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Molto</title>
-    <link rel="stylesheet" href="style/main.css" MEDIA="(min-width: 1250px)">
-    <link rel="stylesheet" href="style/indexphone.css" MEDIA="(max-width: 1249px)">
+    <link rel="stylesheet" href="style/main.css" MEDIA="(min-width: 1450px)">
+    <link rel="stylesheet" href="style/indexphone.css" MEDIA="(max-width: 1449px)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 </head>
 
@@ -112,7 +112,7 @@ echo '<link href="style/styl.css" rel="stylesheet">';
 //Announcement::addAnnouncement("motoryzacja","asdsad","csotam",122,"/brak.png", "asfdfds", "vbvbvb", date("Y-m-d H:i:s"), 1);
 
 
-    $a = Announcement::getRandom(6);
+    $a = Announcement::getRandom(8);
 for ($i=0; $i < count($a); $i++) { 
     echo '<div class="randomAnn" onclick="openAnn('.$a[$i]->id.')">
     <div class="annImg">

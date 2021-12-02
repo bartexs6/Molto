@@ -34,12 +34,12 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == TRUE){
             <option value="Motoryzacja">Motoryzacja</option>
             <option value="Elektronika">Elektronika</option>
             <option value="Ubrania">Ubrania</option>
-            <option value="Dom">Dom</option>
+            <option value="Dom">Dom i ogród</option>
             <option value="Nieruchomosci">Nieruchomości</option>
             <option value="Rozrywka">Rozrywka</option>
         </select><br>
 
-        <input type="text" name="title" placeholder="tytuł" maxlength="20" required><br>
+        <input type="text" name="title" placeholder="tytuł" maxlength="25" required><br>
         <textarea name="description" placeholder="opis" rows="5" cols="40" maxlength="512"></textarea><br>
         <input type="number" name="value" placeholder="cena" min=0 max=9999999 required><br>
         <label for="file">Wybierz zdjęcia (maks 3)</label>

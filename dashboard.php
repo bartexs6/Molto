@@ -106,7 +106,7 @@
 
                         echo '<div class="interractionAcc">';
                             echo '<button type="submit" name="editAccount">Edytuj konto</button>';
-                            echo '<button type="submit" name="deleteAccount">Usuń konto</button>';
+                            #echo '<button type="submit" name="deleteAccount">Usuń konto</button>';
                         echo '</div>';
                         
                         echo '</form>';

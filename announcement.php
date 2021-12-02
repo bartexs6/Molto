@@ -1,7 +1,7 @@
 <?php
 class Announcement{
 
-    const MAX_TITLE_LENGTH = 21;
+    const MAX_TITLE_LENGTH = 26;
     const MAX_DESCRIPTION_LENGTH = 1025;
     const MAX_IMGLINK_LENGTH = 65;
     const MAX_CONTACT_LENGTH = 65;
