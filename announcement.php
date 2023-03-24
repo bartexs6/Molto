@@ -256,5 +256,16 @@ class Announcement{
             throw new Exception("Cannot find announcement", 1);
         }
     }
+
+    public static function addToFavorites(int $id, int $userId){
+        $conn = DatabaseConnect::connect();
+        $cmd = mysqli_prepare($conn, "UPDATE user SET favorites = CONCAT(?, favorites) WHERE id = ?");
+
+       $annIdText = "$id,";
+        mysqli_stmt_bind_param($cmd, "si", $annIdText, $userId);
+        mysqli_stmt_execute($cmd);
+
+        mysqli_close($conn);
+    }
 }
 ?>

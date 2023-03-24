@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2023 at 03:37 PM
+-- Generation Time: Mar 24, 2023 at 02:43 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -101,18 +101,19 @@ CREATE TABLE `user` (
   `username` text COLLATE utf8_polish_ci NOT NULL,
   `password` text COLLATE utf8_polish_ci NOT NULL,
   `email` text COLLATE utf8_polish_ci NOT NULL,
-  `phone_number` tinytext COLLATE utf8_polish_ci NOT NULL
+  `phone_number` tinytext COLLATE utf8_polish_ci NOT NULL,
+  `favorites` tinytext COLLATE utf8_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `password`, `email`, `phone_number`) VALUES
-(1, 'root', '38b04e559910164fed598ed76efddcbb', 'root@molto.pl', '877-999-123'),
-(2, 'admin', '70562ba9998fc2d970b806c3dc30269d', 'admin@admin.com', '123-456-789'),
-(3, 'test', '63a9f0ea7bb98050796b649e85481845', 'test@test.pl', '123-123-123'),
-(4, 'bartek', 'ec6a6536ca304edf844d1d248a4f08dc', 'bp@pl.pl', '123-123-321');
+INSERT INTO `user` (`id`, `username`, `password`, `email`, `phone_number`, `favorites`) VALUES
+(1, 'root', '63a9f0ea7bb98050796b649e85481845', 'root@molto.pl', '877-999-123', '6,4,1,'),
+(2, 'admin', '70562ba9998fc2d970b806c3dc30269d', 'admin@admin.com', '123-456-789', ''),
+(3, 'test', '63a9f0ea7bb98050796b649e85481845', 'test@test.pl', '123-123-123', ''),
+(4, 'bartek', 'ec6a6536ca304edf844d1d248a4f08dc', 'bp@pl.pl', '123-123-321', '');
 
 -- --------------------------------------------------------
 

@@ -25,6 +25,15 @@ include_once("connect.php");
 include_once("announcement.php");
 include_once("user.php");
 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+
+    if(isset($_SESSION['logged']) && $_SESSION['logged'] == TRUE){
+        $userId = User::userId($_SESSION['username']);
+    }else{
+        $userId = NULL;
+    }
+}
 
 if(!isset($_GET["id"]) || !is_numeric($_GET["id"]) || $_GET["id"] <= 0){
     show_error("Nie można znaleźć ogłoszenia");
@@ -46,8 +55,8 @@ if(!isset($_GET["id"]) || !is_numeric($_GET["id"]) || $_GET["id"] <= 0){
         echo '<h2><i class="fas fa-shopping-cart"></i> '.$announcement->value.' zł</h2>';
         echo '</div>';
         echo '<div class="annButtons">';
-        echo '<p onclick="function al(){alert(`Funkcja tymczasowo niedostępna`)};al()"><i class="far fa-plus-square"></i> Dodaj do ulubionych</p>';
-        echo '<p><a href="report.php?id='.$announcement->id.'"><i class="far fa-flag"></i> Zgłoś</a></p>';
+        echo '<p><a href="action.php?id_favorite='.$announcement->id.'&id_user='.$userId.'"><i class="far fa-plus-square"></i> Dodaj do ulubionych</a></p>';
+        echo '<p><a href="action.php?id='.$announcement->id.'"><i class="far fa-flag"></i> Zgłoś</a></p>';
         echo '</div>';
         echo '<div class="annContact">';
         echo '<div class="userProfil">';

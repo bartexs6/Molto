@@ -39,7 +39,14 @@
                 <span class="title">Twoje</span>
             </button>
 
-            <button class="tab-btn" data-for-tab="5" onclick="logout()">
+            <button class="tab-btn" data-for-tab="5">
+                <span class="icon">
+                    <ion-icon name="cart-outline"></ion-icon>
+                </span>
+                <span class="title">Ulubione</span>
+            </button>
+
+            <button class="tab-btn" data-for-tab="6" onclick="logout()">
                 <span class="icon">
                     <ion-icon name="log-out-outline"></ion-icon>
                 </span>
@@ -103,7 +110,6 @@
                                 echo '<label for="password">hasło:</label>';
                                 echo '<input type="password" name="password" value="'.$row[2].'" required>';
                             echo '</div>';
-
                         echo '<div class="interractionAcc">';
                             echo '<button type="submit" name="editAccount">Edytuj konto</button>';
                             #echo '<button type="submit" name="deleteAccount">Usuń konto</button>';
@@ -114,7 +120,7 @@
                     echo '</div>';
                     mysqli_close($conn);
                 }else{
-                    echo '                    <div class="login">
+                    echo '<div class="login">
                     <form action="login.php" method="POST">
                         <input type="text" name="login_nick" placeholder="nick" required>
                         <input type="password" name="login_password" placeholder="hasło" required>
@@ -137,22 +143,29 @@
                 </div>
             </div>
 
-            <!--OGŁOSZENIA-->
+            <!--OGLOSZENIA-->
             <div class="tab-content" data-tab="3">
                 <?php
-                    include "addAnnForm.php";
+                    include_once "addAnnForm.php";
                 ?>
             </div>
 
             <!--TWOJE-->
             <div class="tab-content" data-tab="4">
                 <?php
-                include_once 'editAnn.php';
+                    include_once 'editAnn.php';
                 ?>
             </div>
 
-            <!--WYLOGUJ SIĘ-->
+            <!--ULUBIONE-->
             <div class="tab-content" data-tab="5">
+                <?php
+                    include_once 'favorites.php';
+                ?>
+            </div>
+
+            <!--WYLOGUJ SIE-->
+            <div class="tab-content" data-tab="6">
                 <p><b>Wylogowywanie powiodło się</b></p>
             </div>
 
@@ -174,7 +187,7 @@
                     const tabNumber = button.dataset.forTab;
                     const tabActivate = container.querySelector(`.tab-content[data-tab="${tabNumber}"]`)
 
-                    if(tabNumber == 5){
+                    if(tabNumber == 6){
                         location.assign("logout.php");
                     }
 
