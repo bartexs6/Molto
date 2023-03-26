@@ -31,6 +31,14 @@
             if($id != NULL){
                 $announcement = Announcement::getById($id);
 	            echo $announcement->title."\n";
+                echo '<div class="dashboardEditAnn">';
+                echo '<form action="editAnn.php" method="POST">';
+                    echo '<img src=ann_img/'.$announcement->img_link.'>';
+                    echo '<input type="text" name="titleEdit" value="'.$announcement->title.'" required>';
+                    echo '<input type="text" name="categoryEdit" value="'.$announcement->category.'" required>';
+                    echo '<button type="submit" name="delete">Usuń z ulubionych</button>';
+                    echo '</form>';
+                echo '</div>';
             }
         }
 
@@ -38,8 +46,7 @@
         echo '<div class="editContent">'; 
 
         echo '</div>';
-
-            
+        
     }else{
          echo "<p><b>Aby mieć dostęp do tej skecji należy się zalogowwać</b></p>";
     }

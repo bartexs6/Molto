@@ -6,6 +6,7 @@ class Announcement{
     const MAX_IMGLINK_LENGTH = 65;
     const MAX_CONTACT_LENGTH = 65;
     const MAX_LOCATION_LENGTH = 65;
+    const MAX_PRICE = 999999;
 
     public $id;
     public $category;
@@ -47,7 +48,7 @@ class Announcement{
             throw new Exception("Date error", 1);
         }
 
-        if($value < 0 || $value > 9999999){
+        if($value < 0 || $value > MAX_PRICE){
             show_error("Błąd z wartością wystawianego ogłoszenia");
             throw new Exception("Value error", 1);
         }
@@ -156,7 +157,7 @@ class Announcement{
     }
 
         // Pobieranie ogloszen poprzez kategorie
-        public static function getByCategory(string $category){
+        public static function getByCategory(string $category, string $sortBy = "createdDesc", int $minPrice=0, int $maxPrice=Announcement::MAX_PRICE, string $location = ""){
             $conn = DatabaseConnect::connect();
 
             $limit = mysqli_prepare($conn, "SELECT COUNT(*) FROM announcement WHERE category=?");
@@ -167,7 +168,20 @@ class Announcement{
 
             $limit = mysqli_fetch_row($getResult)[0];
 
-            $cmd = mysqli_prepare($conn, "SELECT id FROM announcement WHERE category=?");
+            switch ($sortBy) {
+		            case 'priceAsc':
+                        $cmd = mysqli_prepare($conn, "SELECT id FROM announcement WHERE category=? ORDER BY value ASC");
+		            break;
+		            case 'priceDesc':
+                        $cmd = mysqli_prepare($conn, "SELECT id FROM announcement WHERE category=? ORDER BY value DESC");
+		            break;
+		            case 'createdDesc':
+                        $cmd = mysqli_prepare($conn, "SELECT id FROM announcement WHERE category=? ORDER BY date DESC");
+		            break;
+	            default:
+		            show_error("Błąd podczas sortowania wyszukiwanych ogłoszeń");
+		            break;
+            }
     
             mysqli_stmt_bind_param($cmd, "s", $category);
             mysqli_stmt_execute($cmd);
@@ -185,7 +199,15 @@ class Announcement{
     
             foreach ($annId as $ann) {
                 $announcement = Announcement::getById($ann);
-                array_push($list, $announcement);
+                if($announcement->value > $minPrice && $announcement->value < $maxPrice){
+                    if($location != ""){
+                        if($location == $announcement->location){
+                            array_push($list, $announcement);
+                        }
+                    }else{
+                         array_push($list, $announcement);
+                    }
+                }
             }
 
             if(isset($list) && isset($list) != 0){
