@@ -22,18 +22,22 @@ echo '<div class="mainCat" styl-e="min-height: 90vh;">';
 if(isset($_GET["category"]) && !empty($_GET["category"])){
 
     $category = $_GET["category"];
-    echo '<div class="categoryMisc">'.$category.'</h1>';
+    echo '<div class="categoryMisc"><h1>Filtry</h1>';
     echo '<form action="category.php" method="get">';
     echo '<input type="text" name="category" value="'.$category.'" hidden>';
+    echo '<label for="minPrice">Cena od:</label>';
     echo '<input type="number" name="minPrice" value=0 min=0>';
-    echo '<input type="number" name="maxPrice">';
+    echo '<label for="maxPrice">Cena do:</label>';
+    echo '<input type="number" name="maxPrice" value=100000 max=100000>';
+    echo '<label for="location">Miejscowość:</label>';
     echo '<input type="text" name="location">';
+    echo '<label for="sortBy">Sortuj według:</label>';
     echo '<select name="sortBy">
               <option value="createdDesc">Najnowsze</option>
               <option value="priceAsc">Najtańsze</option>
               <option value="priceDesc">Najdroższe</option>
           </select>';
-    echo '<input type="submit">';
+    echo '<input type="submit" value="Wyszukaj ponownie">';
     echo '</form></div>';
     if($category == "motoryzacja" || $category == "elektronika" || $category == "ubrania" || $category == "dom" || $category == "nieruchomosci" || $category == "rozrywka"){
 
@@ -83,7 +87,6 @@ if(isset($_GET["category"]) && !empty($_GET["category"])){
             echo '<p>'.$a[$i]->date.'</p>';
             echo '<p>'.$a[$i]->value.' PLN</p>';
             echo '<p>'.$a[$i]->location.'</p>';
-            echo '<p><button class="heart_btn" onclick="addToFav(this)"><span id="icon"><i class="far fa-heart"></i></span></button></p>';
             echo '</div>';
         }
         

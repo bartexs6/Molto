@@ -24,8 +24,8 @@
         while($row = mysqli_fetch_row($result)){
                 echo '<div class="dashboardEditAnn">';
                 echo '<form action="editAnn.php" method="GET">';
-                echo '<img src=ann_img/'.$row[5].'>';
-                echo '<input type="text" name="id" value="'.$row[0].'" required>';
+                echo '<img src="ann_img/'.$row[5].'">';
+                echo '<input type="text" name="id" value="'.$row[0].'" hidden required>';
                 echo '<input type="text" name="titleEdit" value="'.$row[2].'" required>';
                 echo '<input type="text" name="titleBeforeEdit" value="'.$row[2].'" hidden>';
                 echo '<input type="text" name="categoryEdit" value="'.$row[1].'" required>';
