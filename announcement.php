@@ -48,7 +48,7 @@ class Announcement{
             throw new Exception("Date error", 1);
         }
 
-        if($value < 0 || $value > MAX_PRICE){
+        if($value < 0 || $value > Announcement::MAX_PRICE){
             show_error("Błąd z wartością wystawianego ogłoszenia");
             throw new Exception("Value error", 1);
         }

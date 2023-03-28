@@ -1,6 +1,7 @@
 ﻿<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 <link rel="stylesheet" href="style/category.css">
 <link rel="stylesheet" href="style/main.css">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
 
 
 <?php
@@ -17,7 +18,7 @@
 include_once("connect.php");
 include_once("announcement.php");
 
-echo '<div class="mainCat" styl-e="min-height: 90vh;">';
+echo '<div class="mainCat" style="min-height: 90vh;">';
 
 if(isset($_GET["category"]) && !empty($_GET["category"])){
 

@@ -5,25 +5,51 @@ body{
 .randomAnnCategory{
     cursor: pointer;
 }
-
-.categoryMisc {
-    font-family: "Raleway", sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 90%;
-    margin: auto;
-}
-
-.categoryMisc form{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-}
-    .categoryMisc form *{
-        border: none;
-        cursor: pointer;
-        font-size: 1.2em;
+@media only screen and (min-width: 1320px) {
+    .categoryMisc {
+        font-family: "Raleway", sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 90%;
+        margin: auto;
     }
+
+    .categoryMisc form{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+        .categoryMisc form *{
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+}
+
+@media only screen and (max-width: 1319px) {
+    .categoryMisc {
+        font-family: "Raleway", sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 90%;
+        margin: auto;
+    }
+
+        .categoryMisc form {
+            width: 50vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+            .categoryMisc form * {
+                border: none;
+                cursor: pointer;
+                font-size: 1.2em;
+            }
+}
 

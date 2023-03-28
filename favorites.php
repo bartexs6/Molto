@@ -13,7 +13,7 @@
         $userId = User::userId($_SESSION['username']);
 
         if(isset($_POST["id"])){
-            /*$cmd =  mysqli_prepare($conn,"SELECT favorites FROM user WHERE id=?");
+            $cmd =  mysqli_prepare($conn,"SELECT favorites FROM user WHERE id=?");
 
             mysqli_stmt_bind_param($cmd, "i", $userId);
             mysqli_stmt_execute($cmd);
@@ -22,14 +22,21 @@
 
             $row = mysqli_fetch_row($getResult);
             $ids = explode(",",$row[0]);
+            $id = $_POST["id"];
 
-            /*foreach($ids as $idAnn){
-                if($idAnn != NULL && $id == $idAnn){
-                    unset($ids[$id]);
+            foreach($ids as $index=>$idAnn){
+                if($idAnn != NULL && $idAnn == $id){
+                    unset($ids[$index]);
                 }
-            }*/
+            }
 
-            printf($ids);
+            $ids = implode(",", $ids);
+
+            $cmd =  mysqli_prepare($conn,"UPDATE user SET favorites = ? WHERE id = ?");
+
+            mysqli_stmt_bind_param($cmd, "si", $ids, $userId);
+            mysqli_stmt_execute($cmd);
+            header("Location: dashboard.php");
         }
 
         $cmd =  mysqli_prepare($conn,"SELECT favorites FROM user WHERE id=?");

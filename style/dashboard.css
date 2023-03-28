@@ -78,6 +78,15 @@
     
 }
 
+@media only screen and (max-width: 650px) {
+    .tab-btn .title{
+        display: none;
+    }
+    .logo{
+        display: none;
+    }
+}
+
 .tab-content-active{
     display:flex;
 }
@@ -179,248 +188,259 @@ textarea {
     width: 90%;
 }
 
-.logreg .login input{
-    border: none;
-    border-bottom: 1px solid #282828;
-    box-shadow: none;
-    font-weight: 500;
-    height: 7vh;
-    margin: 5%;
-    font-size: medium;
-    opacity: 0.6;
+@media only screen and (max-width: 650px) {
+    .logreg {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 90%;
+        width: 90%;
+    }
 }
 
-.logreg .register input{
-    border: none;
-    border-bottom: 1px solid #282828;
-    box-shadow: none;
-    font-weight: 500;
-    height: 7vh;
-    margin: 5%;
-    font-size: medium;
-    opacity: 0.8;
-}
+    .logreg .login input {
+        border: none;
+        border-bottom: 1px solid #282828;
+        box-shadow: none;
+        font-weight: 500;
+        height: 7vh;
+        margin: 5%;
+        font-size: medium;
+        opacity: 0.6;
+    }
 
-.logreg input:focus{
-    outline: none;
-    color: #282828;
-    opacity: 1;
-}
+    .logreg .register input {
+        border: none;
+        border-bottom: 1px solid #282828;
+        box-shadow: none;
+        font-weight: 500;
+        height: 7vh;
+        margin: 5%;
+        font-size: medium;
+        opacity: 0.8;
+    }
 
-
-
-.logreg button {
-    background-image: linear-gradient(to right, #614385 0%, #516395  51%, #614385  100%)
-}
-
-.logreg button {
-    border: none;
-    margin: 10px;
-    padding: 15px 45px;
-    text-align: center;
-    text-transform: uppercase;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: white;            
-    border-radius: 10px;
-    display: block;
-}
-
-.logreg button:hover {
-    background-position: right center;
-    color: #fff;
-    text-decoration: none;
-}
-
-.logreg .line{
-    margin-top: auto;
-    margin-bottom: auto;
-    top: 80px;
-    height: 80%;
-    width: 0.1%;
-    background-color: #ccc;
-}
-
-.logo {
-    position: absolute;
-    top: -90px;
-}
-
-.dashboardEditAnn{
-    height: 25vh;
-    width: 90%;
-    display: flex;
-    margin-bottom: 5%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 5%;
-    border-bottom: 1px solid #282828;
-}
-
-.dashboardEditAnn form {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: row;
-}
-
-.dashboardEditAnn form img{
-    object-fit: cover;
-    width: 10%;
-    height: 80%;
-    border-radius: 4%;
-}
-
-.dashboardEditAnn form input{
-    color: black;
-    width: 10%;
-    border: none;
-    border-bottom: 1px solid #282828;
-    box-shadow: none;
-    font-weight: 400;
-    height: 7vh;
-    font-size: medium;
-    background-color: transparent;
-    text-align: center;
-}
-
-.dashboardEditAnn form textarea{
-    width: 20%;
-    height: 50%;
-    background-color: transparent;
-    opacity: 0.6;
-}
-
-.dashboardEditAnn form textarea:focus{
-    outline: none;
-}
-
-.dashboardEditAnn form input:focus{
-    outline: none;
-}
+    .logreg input:focus {
+        outline: none;
+        color: #282828;
+        opacity: 1;
+    }
 
 
-.dashboardEditAnn form button{
-  background-color: #614385;
-  border-radius: 100px;
-  box-shadow: rgba(167, 124, 216, 0.096) 0 -25px 18px -14px inset,rgba(117, 53, 146, 0.15) 0 1px 2px,rgba(82, 32, 146, 0.15) 0 2px 4px,rgba(93, 22, 126, 0.15) 0 4px 8px,rgba(86, 9, 109, 0.15) 0 8px 16px,rgba(47, 3, 77, 0.15) 0 16px 32px;
-  color: white;
-  cursor: pointer;
-  display: inline-block;
-  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
-  padding: 7px 20px;
-  text-align: center;
-  text-decoration: none;
-  transition: all 250ms;
-  border: 0;
-  font-size: 16px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
+
+    .logreg button {
+        background-image: linear-gradient(to right, #614385 0%, #516395 51%, #614385 100%)
+    }
+
+    .logreg button {
+        border: none;
+        margin: 10px;
+        padding: 15px 45px;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;
+        border-radius: 10px;
+        display: block;
+    }
+
+        .logreg button:hover {
+            background-position: right center;
+            color: #fff;
+            text-decoration: none;
+        }
+
+    .logreg .line {
+        margin-top: auto;
+        margin-bottom: auto;
+        top: 80px;
+        height: 80%;
+        width: 0.1%;
+        background-color: #ccc;
+    }
+
+    .logo {
+        position: absolute;
+        top: -90px;
+    }
+
+    .dashboardEditAnn {
+        height: 25vh;
+        width: 90%;
+        display: flex;
+        margin-bottom: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 5%;
+        border-bottom: 1px solid #282828;
+    }
+
+        .dashboardEditAnn form {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: row;
+        }
+
+            .dashboardEditAnn form img {
+                object-fit: cover;
+                width: 10%;
+                height: 80%;
+                border-radius: 4%;
+            }
+
+            .dashboardEditAnn form input {
+                color: black;
+                width: 10%;
+                border: none;
+                border-bottom: 1px solid #282828;
+                box-shadow: none;
+                font-weight: 400;
+                height: 7vh;
+                font-size: medium;
+                background-color: transparent;
+                text-align: center;
+            }
+
+            .dashboardEditAnn form textarea {
+                width: 20%;
+                height: 50%;
+                background-color: transparent;
+                opacity: 0.6;
+            }
+
+                .dashboardEditAnn form textarea:focus {
+                    outline: none;
+                }
+
+            .dashboardEditAnn form input:focus {
+                outline: none;
+            }
 
 
-.dashboardEditAnn form button:hover{
-    box-shadow: rgba(37, 12, 27, 0.35) 0 -25px 18px -14px inset,rgba(71, 13, 33, 0.25) 0 1px 2px,rgba(71, 10, 60, 0.25) 0 2px 4px,rgba(61, 3, 47, 0.25) 0 4px 8px,rgba(54, 1, 28, 0.25) 0 8px 16px,rgba(1, 19, 8, 0.25) 0 16px 32px;
-    transform: scale(1.05) rotate(-1deg);
-}
+            .dashboardEditAnn form button {
+                background-color: #614385;
+                border-radius: 100px;
+                box-shadow: rgba(167, 124, 216, 0.096) 0 -25px 18px -14px inset,rgba(117, 53, 146, 0.15) 0 1px 2px,rgba(82, 32, 146, 0.15) 0 2px 4px,rgba(93, 22, 126, 0.15) 0 4px 8px,rgba(86, 9, 109, 0.15) 0 8px 16px,rgba(47, 3, 77, 0.15) 0 16px 32px;
+                color: white;
+                cursor: pointer;
+                display: inline-block;
+                font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+                padding: 7px 20px;
+                text-align: center;
+                text-decoration: none;
+                transition: all 250ms;
+                border: 0;
+                font-size: 16px;
+                user-select: none;
+                -webkit-user-select: none;
+                touch-action: manipulation;
+            }
 
 
-.editContent{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: auto;
-    margin: auto;
-    margin-bottom: 5%;
-    width: 100%;
-}
+                .dashboardEditAnn form button:hover {
+                    box-shadow: rgba(37, 12, 27, 0.35) 0 -25px 18px -14px inset,rgba(71, 13, 33, 0.25) 0 1px 2px,rgba(71, 10, 60, 0.25) 0 2px 4px,rgba(61, 3, 47, 0.25) 0 4px 8px,rgba(54, 1, 28, 0.25) 0 8px 16px,rgba(1, 19, 8, 0.25) 0 16px 32px;
+                    transform: scale(1.05) rotate(-1deg);
+                }
 
 
-.accountContent{
-    display: flex;
-    flex-direction:row;
-    justify-content: center;
-    margin: auto;
-    width: 90%;
-    height: 60%;
-}
-.accountContent .leftContent{
-    width: 30%;
-    display:flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items: center;
-    cursor: default;
-}
+    .editContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: auto;
+        margin: auto;
+        margin-bottom: 5%;
+        width: 100%;
+    }
 
-.accountContent .leftContent .icon{
-    font-size: 12rem;
-}
 
-.accountContent .leftContent span{
-    font-size: 150%;
-    margin-top: -20%;
-}
+    .accountContent {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: auto;
+        width: 90%;
+        height: 60%;
+    }
 
-.accountContent .rightContent{
-    margin-left: 2%;
-}
+        .accountContent .leftContent {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: default;
+        }
 
-.accountContent .rightContent form label{
-    background: none;
-    color: #282828;
-    text-align: left;
-    font-weight: 500;
-    font-size: 120%;
-    width: 5vw;
-    cursor: default;
-    width: 40%;
-    margin-left: 0%;
-}
+            .accountContent .leftContent .icon {
+                font-size: 12rem;
+            }
 
-.accountContent .rightContent form input{
-    background-color: none;
-    box-shadow: none;
-    font-size: 110%;
-    border: none;
-    text-align: left;
-    margin-left: 20%;
-    width: 60%;
-}
+            .accountContent .leftContent span {
+                font-size: 150%;
+                margin-top: -20%;
+            }
 
-.accountContent .rightContent form {
-    display: flex;
-    justify-content: flex-start;
-}
+        .accountContent .rightContent {
+            margin-left: 2%;
+        }
 
-.accountContent .rightContent form .accountInf{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-}
+            .accountContent .rightContent form label {
+                background: none;
+                color: #282828;
+                text-align: left;
+                font-weight: 500;
+                font-size: 120%;
+                width: 5vw;
+                cursor: default;
+                width: 40%;
+                margin-left: 0%;
+            }
 
-.accountContent .rightContent form .interractionAcc {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
+            .accountContent .rightContent form input {
+                background-color: none;
+                box-shadow: none;
+                font-size: 110%;
+                border: none;
+                text-align: left;
+                margin-left: 20%;
+                width: 60%;
+            }
 
-.accountContent .rightContent form .interractionAcc button{
-    background: none;
-    font-size: 105%;
-    color: #282828;
-    cursor: pointer;
-    margin-right: 0%;
-    text-align: right;
-    text-decoration: underline;
-    text-transform: uppercase;
-}
+            .accountContent .rightContent form {
+                display: flex;
+                justify-content: flex-start;
+            }
 
-.accountContent .rightContent form .interractionAcc button:hover{
-    color: red;
-}
+                .accountContent .rightContent form .accountInf {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                }
+
+                .accountContent .rightContent form .interractionAcc {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                }
+
+                    .accountContent .rightContent form .interractionAcc button {
+                        background: none;
+                        font-size: 105%;
+                        color: #282828;
+                        cursor: pointer;
+                        margin-right: 0%;
+                        text-align: right;
+                        text-decoration: underline;
+                        text-transform: uppercase;
+                    }
+
+                        .accountContent .rightContent form .interractionAcc button:hover {
+                            color: red;
+                        }
 
 
 
