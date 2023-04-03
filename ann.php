@@ -42,35 +42,35 @@ if(!isset($_GET["id"]) || !is_numeric($_GET["id"]) || $_GET["id"] <= 0){
     try {
         $announcement = Announcement::getById($_GET["id"]);
 
-        echo '<div class="annNavBack">';
-        echo '<p><a href="index.php">< Wroc</a></p>';
-        echo '<p><a href="index.php">Strona główna</a> / <a href="category.php?category='.$announcement->category.'">'.$announcement->category.'</a> / '.htmlspecialchars($announcement->title).'</p>';
-        echo '</div>';
-        echo '<div class="middleContent">';
-        echo '<div class="leftBlock">';
-        echo '<div class="annInfo">';
-        echo '<h2>'.htmlspecialchars($announcement->title).'</h2>';
-        echo '<p>'.htmlspecialchars($announcement->location)." ".$announcement->date.'</p>';
-        echo '<h2><i class="fas fa-shopping-cart"></i> '.$announcement->value.' zł</h2>';
-        echo '</div>';
-        echo '<div class="annButtons">';
-        echo '<p><a href="action.php?id_favorite='.$announcement->id.'&id_user='.$userId.'"><i class="far fa-plus-square"></i> Dodaj do ulubionych</a></p>';
-        echo '<p><a href="action.php?id='.$announcement->id.'"><i class="far fa-flag"></i> Zgłoś</a></p>';
-        echo '</div>';
-        echo '<div class="annContact">';
-        echo '<div class="userProfil">';
-        echo '<h2><i class="far fa-user-circle"></i></h2><div><h2>'.Announcement::getUserById($announcement->user_owner).'</h2><p style="cursor: pointer" onclick="show_phone_number()">Pokaż numer telefonu</p></div>';
-        echo '</div>';
-        echo '<div class="phone">';
-        echo '<div><h2 id="phone_number">+48 XXX XXX XXX</h2></div>';
-        echo '</div>';
-        echo '</div>';
-        echo '</div>';
-        echo '<div class="rightBlock">';
-        echo '<div class="imgColumn">';
+        echo '<div class="annNavBack">
+                <p><a href="index.php">&lt Wroc</a></p>
+                    <p><a href="index.php">Strona główna</a> / <a href="category.php?category='.$announcement->category.'">'.$announcement->category.'</a> / '.htmlspecialchars($announcement->title).'</p>
+                </div>
+            <div class="middleContent">
+            <div class="leftBlock">
+                <div class="annInfo">
+                    <h2>'.htmlspecialchars($announcement->title).'</h2>
+                    <p>'.htmlspecialchars($announcement->location)." ".$announcement->date.'</p>
+                    <h2><i class="fas fa-shopping-cart"></i> '.$announcement->value.' zł</h2>
+                </div>
+                <div class="annButtons">
+                    <p><a href="action.php?id_favorite='.$announcement->id.'&id_user='.$userId.'"><i class="far fa-plus-square"></i> Dodaj do ulubionych</a></p>
+                    <p><a href="action.php?id='.$announcement->id.'"><i class="far fa-flag"></i> Zgłoś</a></p>
+                </div>
+            <div class="annContact">
+                <div class="userProfil">
+                    <h2><i class="far fa-user-circle"></i></h2><div><h2>'.Announcement::getUserById($announcement->user_owner).'</h2><p style="cursor: pointer" onclick="show_phone_number()">Pokaż numer telefonu</p></div>
+                </div>
+                <div class="phone">
+                    <div><h2 id="phone_number">+48 XXX XXX XXX</h2></div>
+                </div>
+                </div>
+            </div>
+            <div class="rightBlock">
+            <div class="imgColumn">';
         for ($i=0; $i < 3; $i++) { 
             if(Announcement::getImgById($announcement->img_id)[$i] != "NULL"){
-                echo '<img src="ann_img/'.Announcement::getImgById($announcement->img_id)[$i].'">';
+                echo '<img src="ann_img/'.Announcement::getImgById($announcement->img_id)[$i].'" alt="Announcement image">';
             }
         }?>
 
@@ -112,14 +112,14 @@ if(!isset($_GET["id"]) || !is_numeric($_GET["id"]) || $_GET["id"] <= 0){
 
 
         <?php
-        echo '</div>';
-        echo '<div class="mainImg">';
-        echo '<i class="fas fa-chevron-left" onclick="previous_img()"></i>';
-        echo '<img src="ann_img/'.$announcement->img_link.'" id="main_img">';
-        echo '<i class="fas fa-chevron-right" onclick="next_img()"></i>';
-        echo '</div>';
-        echo '</div>';
-        echo '</div>';
+        echo '</div>
+                <div class="mainImg">
+                <i class="fas fa-chevron-left" onclick="previous_img()"></i>
+                <img src="ann_img/'.$announcement->img_link.'" id="main_img">
+                <i class="fas fa-chevron-right" onclick="next_img()"></i>
+                </div>
+            </div>
+        </div>';
 
     } catch (Exception $e) {
        show_error("Wystąpił błąd podczas ładowania ogłoszenia");

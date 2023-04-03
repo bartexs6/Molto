@@ -1,8 +1,11 @@
-﻿<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-<link rel="stylesheet" href="style/category.css">
-<link rel="stylesheet" href="style/main.css">
-<meta content="width=device-width, initial-scale=1" name="viewport" />
-
+﻿<!DOCTYPE html>
+<head>
+    <title>Kategoria</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="style/category.css">
+    <link rel="stylesheet" href="style/main.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+</head>
 
 <?php
         include_once("page.php");
@@ -27,13 +30,13 @@ if(isset($_GET["category"]) && !empty($_GET["category"])){
     echo '<form action="category.php" method="get">';
     echo '<input type="text" name="category" value="'.$category.'" hidden>';
     echo '<label for="minPrice">Cena od:</label>';
-    echo '<input type="number" name="minPrice" value=0 min=0>';
+    echo '<input type="number" id="minPrice" name="minPrice" value=0 min=0>';
     echo '<label for="maxPrice">Cena do:</label>';
-    echo '<input type="number" name="maxPrice" value=100000 max=100000>';
+    echo '<input type="number" id="maxPrice" name="maxPrice" value=100000 max=100000>';
     echo '<label for="location">Miejscowość:</label>';
-    echo '<input type="text" name="location">';
+    echo '<input type="text" id="location" name="location">';
     echo '<label for="sortBy">Sortuj według:</label>';
-    echo '<select name="sortBy">
+    echo '<select id="sortBy" name="sortBy">
               <option value="createdDesc">Najnowsze</option>
               <option value="priceAsc">Najtańsze</option>
               <option value="priceDesc">Najdroższe</option>
@@ -83,8 +86,8 @@ if(isset($_GET["category"]) && !empty($_GET["category"])){
 
         for ($i=0; $i < count($a); $i++) { 
             echo '<div class="randomAnnCategory">';
-            echo '<img src="ann_img/'.$a[$i]->img_link.'" onclick="openAnn('.$a[$i]->id.')">';
-            echo '<h3 onclick="openAnn('.$a[$i]->id.')" onclick="openAnn('.$a[$i]->id.')">'.$a[$i]->title.'</h3>';
+            echo '<img src="ann_img/'.$a[$i]->img_link.'" alt="Announcement image" onclick="openAnn('.$a[$i]->id.')">';
+            echo '<h3 onclick="openAnn('.$a[$i]->id.')"">'.$a[$i]->title.'</h3>';
             echo '<p>'.$a[$i]->date.'</p>';
             echo '<p>'.$a[$i]->value.' PLN</p>';
             echo '<p>'.$a[$i]->location.'</p>';

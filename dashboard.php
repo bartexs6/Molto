@@ -1,5 +1,5 @@
 <!doctype html>
-<html lane="pl">
+<html lang="pl">
 
 <head>
     <meta charset="UTF-8">
@@ -64,7 +64,7 @@
             <!--KONTO-->
             <div class="tab-content tab-content-active" data-tab="2">
             <div class="logo">
-                    <img src="style/LOGO.png" alt="logo" height="200" width="auto">
+                    <img src="style/LOGO.png" alt="logo" height="200">
                 </div>
                 <div class="logreg">
             <?php

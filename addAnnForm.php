@@ -5,15 +5,6 @@
 
 ?>
 
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Molto - dodaj ogłoszenie</title>
-</head>
-
-<body>
 
 <?php
 
@@ -57,5 +48,4 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == TRUE){
         }
     }
     </script>
-</body>
-</html>
+

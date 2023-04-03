@@ -1,13 +1,20 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Szukaj</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style/category.css">
+    <link rel="stylesheet" href="style/main.css">
+</head>
+<body>
 <?php
 
     include_once("page.php");
     Page::generateHeader();
 
 ?>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
-<link rel="stylesheet" href="style/category.css">
-<link rel="stylesheet" href="style/main.css">
 <?php
     
     include_once("connect.php");
@@ -61,3 +68,5 @@ function openAnn(id){
     }
 
 </script>
+</body>
+</html>

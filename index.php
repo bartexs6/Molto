@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Molto</title>
-    <link rel="stylesheet" href="style/main.css" MEDIA="(min-width: 1450px)">
-    <link rel="stylesheet" href="style/indexphone.css" MEDIA="(max-width: 1449px)">
+    <link rel="stylesheet" href="style/main.css" MEDIA="(min-width: 701px)">
+    <link rel="stylesheet" href="style/indexphone.css" MEDIA="(max-width: 700px)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 </head>
 
@@ -115,39 +115,18 @@ echo '<link href="style/styl.css" rel="stylesheet">';
     $a = Announcement::getRandom(8);
 for ($i=0; $i < count($a); $i++) { 
     echo '<div class="randomAnn" onclick="openAnn('.$a[$i]->id.')">
-    <div class="annImg">
-    <div class="leftBorder"></div>';
-    echo '<img src="ann_img/'.$a[$i]->img_link.'">
-    <div class="bottomBorder"></div>
+        <div class="annImg">
+            <div class="leftBorder"></div>
+            <img src="ann_img/'.$a[$i]->img_link.'" alt="Announcement image">
+            <div class="bottomBorder"></div>
+            </div>
+        <h3 onclick="openAnn('.$a[$i]->id.')">'.$a[$i]->title.'</h3>
+            <div class="annImgInfo">
+            <p>'.$a[$i]->date.'</p>
+            <p>'.$a[$i]->value.' zł</p>
+        </div>
     </div>';
-    echo '<h3  onclick="openAnn('.$a[$i]->id.')">'.$a[$i]->title.'</h3>
-    <div class="annImgInfo">';
-    echo '<p>'.$a[$i]->date.'</p>';
-    echo '<p>'.$a[$i]->value.' zł</p>
-    </div>';
-    //echo '<button class="heart_btn" onclick="addToFav(this)"><span id="icon"><i class="far fa-heart"></i></span></button>';
-    echo '</div>';
 }
-
-/*
-$a = Announcement::getById(1);
-echo $a->category . "|||" . $a->title . "|||" . $a->description . "|||" .$a->date . "<img src=ann_img/".$a->img_link.">";
-echo "<br><br>";
-$a = Announcement::getById(2);
-echo $a->category . "|||" . $a->title . "|||" . $a->description . "|||" .$a->date;
-echo "<br><br>";
-$a = Announcement::getById(3);
-echo $a->category . "|||" . $a->title . "|||" . $a->description . "|||" .$a->date;
-echo "<br><br>";
-$a = Announcement::getById(4);
-echo $a->category . "|||" . $a->title . "|||" . $a->description . "|||" .$a->date;
-echo "<br><br>";
-$a = Announcement::getById(5);
-echo $a->category . "|||" . $a->title . "|||" . $a->description . "|||" .$a->date;
-echo "<br><br>";
-$a = Announcement::getById(6);
-echo $a->category . "|||" . $a->title . "|||" . $a->description . "|||" .$a->date;
-*/
 
 
 ?>
@@ -160,23 +139,20 @@ echo $a->category . "|||" . $a->title . "|||" . $a->description . "|||" .$a->dat
 Page::generateFooter();
 ?>
 
+    <script>
+
+    let clicked = false;
+    function addToFav(heartIcon){
+        if (!clicked) {
+            clicked = true;
+            heartIcon.innerHTML = `<i class="fas fa-heart"></i>`;
+        } else {
+            clicked = false;
+            heartIcon.innerHTML = `<i class="far fa-heart"></i>`;
+        }
+    }
+
+    </script>
 
 </body>
-
-
-<script>
-
-let clicked = false;
-function addToFav(heartIcon){
-    if (!clicked) {
-        clicked = true;
-        heartIcon.innerHTML = `<i class="fas fa-heart"></i>`;
-    } else {
-        clicked = false;
-        heartIcon.innerHTML = `<i class="far fa-heart"></i>`;
-    }
-}
-
-</script>
-
 </html>
