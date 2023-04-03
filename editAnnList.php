@@ -72,6 +72,6 @@
         mysqli_query($conn,$cmd);
         
         mysqli_close($conn);
-        header("Location: dashboard.php");
+        header("Location: index.php");
     }
 ?>

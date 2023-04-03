@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2023 at 07:14 PM
+-- Generation Time: Apr 03, 2023 at 05:26 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -52,7 +52,7 @@ INSERT INTO `announcement` (`id`, `category`, `title`, `description`, `value`, `
 (4, 'elektronika', 'Laptop DELL N5110', 'Do sprzedania laptop Dell N5110 w bardzo dobrym stanie technicznym i wizualnym. Posiada ekran o przekątnej 15,6 cala, procesor Intel Core i5 drugiej generacji, 6GB pamięci RAM oraz dysk twardy o pojemności 500GB.\r\n\r\nLaptop wyposażony jest w zintegrowaną kartę graficzną Intel HD Graphics, co pozwala na płynne przeglądanie stron internetowych oraz podstawową obróbkę zdjęć i wideo.\r\n\r\nDodatkowo laptop posiada wbudowany czytnik kart SD, porty USB 3.0 oraz HDMI, kamerę internetową oraz moduł WiFi i Bluetooth.', 1200, 'thumb_page_1639404807IMG_20211201_143000.jpg', '877-999-123', 'Kraków', '2023-03-22 14:57:17', 1, 4),
 (5, 'elektronika', 'Monitor ASUS', 'Do sprzedania monitor Asus w idealnym stanie wizualnym i technicznym. Posiada matrycę LED o przekątnej 24 cale oraz rozdzielczości Full HD 1920x1080 pikseli.\r\n\r\nMonitor wyposażony jest w technologię ASUS Smart Contrast Ratio, co pozwala na wyświetlanie obrazów z dużą głębią kolorów oraz kontrastem. Posiada również łącza HDMI, DVI i VGA, co umożliwia podłączenie do wielu urządzeń, takich jak komputery, laptopy, konsolki czy odtwarzacze multimedialne.\r\n\r\nNiskiemu czasowi reakcji matrycy 1ms.', 500, '0742a83147d6b592dbe41d99d610.jpg', '877-999-123', 'Gdańsk', '2023-03-22 15:01:00', 1, 5),
 (6, 'elektronika', 'Moniotor DELL 29', 'Do sprzedania monitor DELL w idealnym stanie wizualnym i technicznym. Posiada matrycę LED o przekątnej 24 cale oraz rozdzielczości Full HD 1920x1080 pikseli.\r\n\r\nMonitor wyposażony jest w technologię DELL Smart Contrast Ratio, co pozwala na wyświetlanie obrazów z dużą głębią kolorów oraz kontrastem. Posiada również łącza HDMI, DVI i VGA, co umożliwia podłączenie do wielu urządzeń, takich jak komputery, laptopy, konsolki czy odtwarzacze multimedialne.', 1000, '296074735_6080482998633779_3306385907982028725_n.jpg', '877-999-123', 'Kraków', '2023-03-22 15:02:57', 1, 6),
-(7, 'ubrania', 'Spodnie męskie', ' Do sprzedania mam eleganckie spodnie męskie w kolorze szarym. Rozmiar to M/L. Spodnie są w bardzo dobrym stanie, noszone tylko kilka razy. Posiadają klasyczny krój.', 40, 'images (1).jpg', '877-999-123', 'Nowy Sącz', '2023-03-22 15:06:49', 1, 7),
+(7, 'ubrania', 'Spodnie męskie', ' Do sprzedania mam eleganckie spodnie męskie w kolorze szarym. Rozmiar to M/L. Spodnie są w bardzo dobrym stanie, noszone tylko kilka razy. Posiadają klasyczny krój.', 40, 'images_(1).jpg', '877-999-123', 'Nowy Sącz', '2023-03-22 15:06:49', 1, 7),
 (8, 'ubrania', 'Skarpetki Nike', 'Mam do sprzedania oryginalne skarpetki Nike w rozmiarze 40-45. Posiadają wygodny elastyczny ściągacz oraz wentylację zapewniającą komfort noszenia. Są w idealnym stanie, nieużywane. Idealne dla fanów marki Nike.', 10, '0077.jpg', '877-999-123', 'Kraków', '2023-03-22 15:08:16', 1, 8),
 (9, 'ubrania', 'Buty Adidas', 'Sprzedam oryginalne buty marki Adidas w rozmiarze 42. Są to modele sportowe, idealne na trening lub do biegania. Buty są w bardzo dobrym stanie, noszone tylko kilka razy. Posiadają amortyzację i wygodną wkładkę. Polecam dla miłośników marki Adidas.', 100, 'Buty-meskie-sportowe-Adidas-VS-Pace-B74494.jpg', '877-999-123', 'Kraków', '2023-03-22 15:11:23', 1, 9),
 (10, 'dom', 'Bramka do piłki nożnej', ' Do sprzedania mam bramkę do piłki nożnej o wymiarach 240x150x90cm. Konstrukcja jest solidna, wykonana z trwałych materiałów, co gwarantuje długie użytkowanie. Bramka jest łatwa w montażu i demontażu, co umożliwia przechowywanie w niewielkim miejscu. Idealna do gry w ogrodzie lub na boisku.', 200, 'bramka-pilkarska-3m-x-155m.jpg', '877-999-123', 'Lublin', '2023-03-22 15:22:04', 1, 10),
@@ -89,7 +89,7 @@ INSERT INTO `imgdata` (`id`, `first_img_link`, `second_img_link`, `third_img_lin
 (4, 'thumb_page_1639404807IMG_20211201_143000.jpg', 'thumb_page_1639404839IMG_20211201_143010.jpg', 'NULL'),
 (5, '0742a83147d6b592dbe41d99d610.jpg', '20220604_194114-removebg-preview-1.png', 'monitor-asus-vw197d-185470cm-1366x768.jpg'),
 (6, '296074735_6080482998633779_3306385907982028725_n.jpg', 'images.jpg', 'NULL'),
-(7, 'images (1).jpg', 'product_302665.jpg', 'NULL'),
+(7, 'images_(1).jpg', 'product_302665.jpg', 'NULL'),
 (8, '0077.jpg', 'NULL', 'NULL'),
 (9, 'Buty-meskie-sportowe-Adidas-VS-Pace-B74494.jpg', 'pol_pl_Buty-Adidas-COAST-STAR-EE9699-2698_3.jpg', 'NULL'),
 (10, 'bramka-pilkarska-3m-x-155m.jpg', 'pol_pl_Bramka-do-pilki-noznej-5x2-m-typ-3-przenosna-202354_1.jpg', 'NULL'),
@@ -129,22 +129,6 @@ INSERT INTO `user` (`id`, `username`, `password`, `email`, `phone_number`, `favo
 (5, 'lukasz', '81dc9bdb52d04dc20036dbd8313ed055', 'lukasz@lukasz.pl', '987-543-231', ''),
 (6, 'piotr', '81dc9bdb52d04dc20036dbd8313ed055', 'piotr@p.pl', '123-321-777', '');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `userdata`
---
-
-CREATE TABLE `userdata` (
-  `id` int(11) NOT NULL,
-  `name` text COLLATE utf8_polish_ci NOT NULL,
-  `surname` text COLLATE utf8_polish_ci NOT NULL,
-  `location` text COLLATE utf8_polish_ci NOT NULL,
-  `phone_number` text COLLATE utf8_polish_ci NOT NULL,
-  `ann_list` text COLLATE utf8_polish_ci NOT NULL,
-  `user_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
-
 --
 -- Indexes for dumped tables
 --
@@ -170,13 +154,6 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `userdata`
---
-ALTER TABLE `userdata`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -199,12 +176,6 @@ ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `userdata`
---
-ALTER TABLE `userdata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- Constraints for dumped tables
 --
 
@@ -214,12 +185,6 @@ ALTER TABLE `userdata`
 ALTER TABLE `announcement`
   ADD CONSTRAINT `img_data` FOREIGN KEY (`img_id`) REFERENCES `imgdata` (`id`),
   ADD CONSTRAINT `owner_id` FOREIGN KEY (`user_owner`) REFERENCES `user` (`id`);
-
---
--- Constraints for table `userdata`
---
-ALTER TABLE `userdata`
-  ADD CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

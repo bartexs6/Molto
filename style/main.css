@@ -45,7 +45,7 @@ body{
 
 .search .input input{
     padding: 5px;
-    font-size: 30px;
+    font-size: calc(1vw + 1vh);
     border: none;
     background-color: #fff;
     border-radius: 60px;
@@ -61,7 +61,7 @@ body{
     padding: 8px;
     background: #675682;
     color: white;
-    font-size: 25px;
+    font-size: calc(1vw + 1vh);
     border: none;
     border-radius: 60px;
     cursor: pointer;
@@ -129,6 +129,7 @@ main{
     font-size: 30px;
     letter-spacing: 7px;
     margin-top: 2%;
+    margin-bottom: 0px;
 }
 
 .categories a{
@@ -227,12 +228,13 @@ main .random{
     font-family: "Prompt", sans-serif;
     font-weight: 600;
     text-transform: uppercase;
+    font-size: calc(0.75vw + 0.75vh);
 }
 
 
 .annImgInfo{
     width: 75%;
-    margin-top: 25%;
+    margin-top: calc(1.2vw + 1.2vh);
     display: flex;
     align-content: flex-start;
     align-items: flex-start;
@@ -244,7 +246,7 @@ main .random{
 }
 .annImgInfo p:nth-child(2){
     margin: 0;
-    font-size: 1.25em;
+    font-size: calc(0.65vw + 0.65vh);
     font-weight: 600;
 }
 

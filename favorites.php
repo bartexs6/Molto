@@ -57,6 +57,9 @@
         foreach($ids as $id){
             if($id != NULL){
                 $announcement = Announcement::getById($id);
+                if(!Announcement::getById($id)){
+                    continue;
+                }
 	            echo $announcement->title."\n";
                 echo '<div class="dashboardEditAnn">';
                 echo '<form action="favorites.php" method="POST">';

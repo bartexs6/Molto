@@ -40,7 +40,7 @@
             
         <!--SEKCJA KATEGORII-->
         <section class="categories">
-            <div class="topic">Kategorie</div>
+            <h1 class="topic">Kategorie</h1>
             <div class="ctg">
                 <div class="c1">
                     <a href="category.php?category=motoryzacja">
@@ -95,8 +95,6 @@ include_once("connect.php");
 include_once("user.php");
 include_once("announcement.php");
 include_once("error.php");
-
-echo '<link href="style/styl.css" rel="stylesheet">';
 
 /*if(isset($_SESSION['logged']) && $_SESSION['logged'] == TRUE){
     echo "Witaj " . $_SESSION['username'];

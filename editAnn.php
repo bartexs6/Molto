@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿<!-- WERSJA TYMCZASOWA -->
+<!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
@@ -31,6 +32,7 @@ if (session_status() === PHP_SESSION_NONE) {
         $userId = User::userId($_SESSION['username']);
     }else{
         $userId = NULL;
+        show_error("Musisz być zalogowany");
     }
 }
 
@@ -38,6 +40,12 @@ if(!isset($_GET["id"]) || !is_numeric($_GET["id"]) || $_GET["id"] <= 0){
     show_error("Nie można znaleźć ogłoszenia");
 }else{
     $id = $_GET["id"];
+
+    if(isset($_GET["delete"]) ){
+        Announcement::deleteAnnouncement($id);
+        header("Location: index.php");
+        return;
+    }
 
     echo '<div class="editAnnInfo"><h1>Tryb edycji ogłoszenia</h1></div>';
      echo '<form action="editAnnList.php" method="POST">
@@ -47,7 +55,7 @@ if(!isset($_GET["id"]) || !is_numeric($_GET["id"]) || $_GET["id"] <= 0){
         $announcement = Announcement::getById($_GET["id"]);
 
         echo '<div class="annNavBack">';
-        echo '<p><a href="index.php">< Wroc</a></p>';
+        echo '<p><a href="index.php">&lt; Wroc</a></p>';
         echo '<p><a href="index.php">Strona główna</a> / <a href="category.php?category='.$announcement->category.'">'.$announcement->category.'</a> / '.htmlspecialchars($announcement->title).'</p>';
         echo '</div>';
         echo '<div class="middleContent">';

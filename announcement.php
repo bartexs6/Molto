@@ -20,7 +20,6 @@ class Announcement{
     public $user_owner;
     public $img_id;
 
-    // NIE UZYWAC KONSTRUKTORA (Od tego jest addAnnouncement)
     function __construct($id, $category, $title, $description, $value, $img_link, $contact, $location, $date, $user_owner, $img_id) {
         $this->id = $id;
         $this->title = $title;
@@ -78,8 +77,6 @@ class Announcement{
             $getResult = mysqli_stmt_get_result($cmd);
     
             mysqli_close($conn);
-    
-            //return new Announcement($row[0],$row[1],$row[2],$row[3],$row[4],$row[5],$row[6],$row[7],$row[8],$row[9]);
         }else{
             show_error("Problem z dodaniem ogłoszenia");
             throw new Exception("Too long variable(s)", 1);
@@ -110,7 +107,7 @@ class Announcement{
         if(isset($row)){
             return new Announcement($row[0],$row[1],$row[2],$row[3],$row[4],$row[5],$row[6],$row[7],$row[8],$row[9],$row[10]);
         }else{
-            throw new Exception("Cannot find announcement", 1);
+            return 0;
         }
     }
 
@@ -140,7 +137,14 @@ class Announcement{
                 continue;
             }
 
+            
+            if(!Announcement::getById($randomId)){
+                $i--;
+                continue;
+            }
+            
             array_push($usedId, $randomId);
+            
             try {
                 array_push($list, Announcement::getById($randomId));
             } catch (Exception $e) {
@@ -155,6 +159,17 @@ class Announcement{
             return $list;
         }
     }
+
+    public static function deleteAnnouncement(int $id){
+            $conn = DatabaseConnect::connect();
+            $cmd = mysqli_prepare($conn, "DELETE FROM announcement WHERE id=?");
+
+            mysqli_stmt_bind_param($cmd, "i", $id);
+            mysqli_stmt_execute($cmd);
+
+            mysqli_close($conn);
+    }
+    
 
         // Pobieranie ogloszen poprzez kategorie
         public static function getByCategory(string $category, string $sortBy = "createdDesc", int $minPrice=0, int $maxPrice=Announcement::MAX_PRICE, string $location = ""){
